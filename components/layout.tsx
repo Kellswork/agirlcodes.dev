@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
 import Link from 'next/link';
 import React from 'react';
 
@@ -15,7 +14,7 @@ interface LayoutProps {
 
 export default function Layout({ children, home }: LayoutProps){
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -31,7 +30,7 @@ export default function Layout({ children, home }: LayoutProps){
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header>
         {home ? (
           <>
             <Image
