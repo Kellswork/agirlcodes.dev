@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const name = 'Your Name';
-export const siteTitle = 'Next.js Sample Website';
+const name = 'Kells';
+export const siteTitle = 'My Blog';
 
 interface LayoutProps {
   home?: boolean
