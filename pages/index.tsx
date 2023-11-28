@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
-import { getSortedPostsData } from '../utils/posts';
+import { PostDataProps, getSortedPostsData } from '../utils/util';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -12,10 +12,10 @@ export async function getStaticProps() {
 }
 
 interface HomeProps {
-
+  allPostsData : PostDataProps[]
 }
 
-export default function Home({allPostsData}) {
+export default function Home({allPostsData}: HomeProps) {
   return (
     <Layout home>
       <Head>
@@ -27,13 +27,13 @@ export default function Home({allPostsData}) {
       <section >
         <h2 >Blog</h2>
         <ul>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, frontMatter }) => (
             <li key={id}>
-              {title}
+              {frontMatter.title}
               <br />
               {id}
               <br />
-              {date}
+              {frontMatter.date}
             </li>
           ))}
         </ul>
