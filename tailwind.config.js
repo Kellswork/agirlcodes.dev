@@ -9,7 +9,16 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    
+    extend: {
+      fontFamily: {
+        'pacifico':['var(--font-pacifico)', 'cursive'],
+        'roboto': ['var(--font-roboto)', 'sans-serif', 'ui-sans-serif', 'system-ui',]
+      },
+      maxWidth: {
+        "5xl" : '1030px',
+      },
+    },
   },
   plugins: [],
 }
