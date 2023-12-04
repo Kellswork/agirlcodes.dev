@@ -11,7 +11,7 @@ const Navigation = () => {
           <div>
             <h1 className="font-pacifico text-2xl">AgirlCodes</h1>
           </div>
-          <div className="font-roboto font-semibold text-base">
+          <div className="font-roboto font-medium  text-base">
             <Link className='mr-5' href="/">Home</Link>
             <Link className='ml-5' href="/">Portfolio</Link>
           </div>
