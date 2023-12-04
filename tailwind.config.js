@@ -9,7 +9,6 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    
     extend: {
       fontFamily: {
         'pacifico':['var(--font-pacifico)', 'cursive'],
@@ -18,7 +17,14 @@ module.exports = {
       maxWidth: {
         "5xl" : '1030px',
       },
+     fontSize: {
+      titleLarge: ['1.375rem', {
+        lineHeight: '28px'
+      }]
+     },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
