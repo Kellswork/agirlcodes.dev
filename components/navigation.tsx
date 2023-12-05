@@ -9,7 +9,7 @@ const Navigation = () => {
       <BaseLayout>
         <div className="flex justify-between items-center h-20 ">
           <div>
-            <h1 className="font-pacifico text-2xl">AgirlCodes</h1>
+            <h1 className="font-pacifico text-2xl text-purple-9">AgirlCodes</h1>
           </div>
           <div className="font-roboto font-medium  text-base">
             <Link className='mr-5' href="/">Home</Link>
