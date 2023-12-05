@@ -17,7 +17,7 @@ export const FilterChipSelected = () => (
 
 export const FilterChipFilled = () => (
   <div className="inline-flex justify-center items-center bg-teal-100 rounded-lg h-8">
-    <span className="text-sm px-4">Filter chip</span>
+    <span className="text-sm px-2">Filter chip</span>
   </div>
 );
 
