@@ -1,9 +1,9 @@
 import React from "react";
 import BaseLayout from "../baseLayout";
-import { FilterChipFilled } from "./button";
+import { Button, FilterChipFilled } from "./button";
 import Link from "next/link";
 import Image from "next/image";
-import profilepic from "../public/images/profile.jpg";
+import profilepic from "../../public/images/profile.jpg";
 
 interface CardProps {
   title?: string;
@@ -14,7 +14,7 @@ interface CardProps {
 }
 
 export const BlogPostlistCard = (props: CardProps) => (
-  <div className="font-roboto max-w-[632px] py-5 px-4">
+  <div className="font-roboto max-w-[632px] py-5">
     <h2 className="text-titleLarge font-medium pb-4">
       Lorem Ipsum is simply dummy text of the printing
     </h2>
@@ -23,22 +23,22 @@ export const BlogPostlistCard = (props: CardProps) => (
       <span className="px-2 text-sm font-medium">7 November, 2023 </span>
     </div>
     <div className="text-sm max-w-[600px] pb-4">
-      Lorem Ipsum has been the industry`&apos;`s standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
+      Lorem Ipsum has been the industry&apos;s standard dummy text ever since
+      the 1500s, when an unknown printer took a galley of type and scrambled it
+      to make a type specimen book. It has survived not only five centuries, but
       also the leap into electronic typesetting.{" "}
     </div>
 
-    <Link className="text-sm font-medium text-slate-500" href="/">
-      Learn More
+    <Link className="text-xs font-medium text-slate-500 text-purple-4" href="/">
+      Learn more
     </Link>
   </div>
 );
 
 export const ProfileCard = () => (
-  <div className="w-[22.5rem] border border-[#CAC4D0] rounded-xl bg-white mt-2">
+  <div className="w-[22.5rem] border border-[#CAC4D0] rounded-xl bg-white max-h-[680px]">
     <div className="relative">
-      <div className="h-48 bg-zinc-400  rounded-t-xl "></div>
+      <div className="h-48 bg-zinc-400 rounded-t-xl bg-purple-1 opacity-50"></div>
       <div className="absolute top-28 left-1/4 ">
         <Image
           className=" inline-block rounded-full ring-8 ring-white"
@@ -61,20 +61,18 @@ export const ProfileCard = () => (
       </p>
 
       <p className="text-left text-sm pb-3">
-        Hello! I`&apos;`m a full-stack engineer with extensive experience in modern web
-        user interface development. I specialise in React JS and Typescript for
-        front-end work, and Express/Node JS, Golang and PostgreSQL for back-end
-        development.
+        Hello! I&apos;m a full-stack engineer with extensive experience in
+        modern web user interface development. I specialise in React JS and
+        Typescript for front-end work, and Express/Node JS, Golang and
+        PostgreSQL for back-end development.
       </p>
       <p className="text-left text-sm pb-4">
         I share insights on these technologies. Check out my profile to learn
-        more about my work and feel free to contact me if you`&apos;`re interested in
-        working together.
+        more about my work and feel free to contact me if you&apos;re interested
+        in working together.
       </p>
 
-      <button className="inline-flex text-sm items-center h-10 font-medium rounded-[20px] bg-zinc-400 px-5 py-2.5 w-full justify-center">
-        VIEW PROFILE
-      </button>
+      <Button text='VIEW PROFILE' borderRadius="rounded-[20px]" width="w-full" bgColor='bg-purple-1' textColor="text-text-color"/>
     </div>
   </div>
 );
