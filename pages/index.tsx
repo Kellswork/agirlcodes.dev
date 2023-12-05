@@ -10,7 +10,7 @@ interface HomeProps {
 
 export default function Home({allPostsData}: HomeProps) {
   return (
-    <div>
+    <div className='border-t-8 border-purple-5'>
       <Navigation/>
       <MainContent/>
       <Footer/>
