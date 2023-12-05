@@ -1,13 +1,14 @@
 import React from 'react'
 
 interface Props {
-  children: JSX.Element | JSX.Element[] | string | string[]
+  children: JSX.Element | JSX.Element[] | string | string[];
+  spacing?: string
 
 }
 
-const BaseLayout = ({children}: Props) => {
+const BaseLayout = ({children, spacing}: Props) => {
   return (
-    <div className=' max-w-5xl bg-slate-300 my-0 mx-auto' >{children}</div>
+    <div className={`max-w-5xl my-0 mx-auto ${spacing|| ''}`} >{children}</div>
   )
 }
 
