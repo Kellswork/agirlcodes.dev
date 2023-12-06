@@ -3,17 +3,27 @@ import BaseLayout from "./baseLayout";
 import Head from "next/head";
 import Link from "next/link";
 
+const NavLink = ({ text, link }: { text: string; link: string }) => (
+  <Link
+    className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 mr-5"
+    href={link}
+  >
+    {text}
+  </Link>
+);
+
 const Navigation = () => {
   return (
     <div className="bg-neutral-100">
       <BaseLayout>
         <div className="flex justify-between items-center h-20 ">
-          <div>
+          <Link href="/">
             <h1 className="font-pacifico text-2xl text-purple-9">AgirlCodes</h1>
-          </div>
+          </Link>
+
           <div className="font-roboto font-medium  text-base">
-            <Link className='mr-5' href="/">Home</Link>
-            <Link className='ml-5' href="/">Portfolio</Link>
+            <NavLink link="/" text="Home" />
+            <NavLink link="/" text="Portfolio" />
           </div>
         </div>
       </BaseLayout>

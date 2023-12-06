@@ -14,7 +14,8 @@ interface CardProps {
 }
 
 export const BlogPostlistCard = (props: CardProps) => (
-  <div className="font-roboto max-w-[632px] py-5 md:max-w-full ">
+  <div className="box-border font-roboto max-w-[632px] rounded  py-4 md:max-w-full ">
+    <div className="cursor-pointer" >
     <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px]">
       Lorem Ipsum is simply dummy text of the printing
     </h2>
@@ -29,9 +30,13 @@ export const BlogPostlistCard = (props: CardProps) => (
       also the leap into electronic typesetting.{" "}
     </div>
 
-    <Link className="text-sm font-medium text-purple-4" href="/">
+    <Link
+      className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 text-sm font-medium text-purple-4"
+      href="/"
+    >
       Learn more
     </Link>
+    </div>
   </div>
 );
 
@@ -77,6 +82,7 @@ export const ProfileCard = () => (
         width="w-full"
         bgColor="bg-purple-1"
         textColor="text-text-color"
+        activeColor="bg-purple-2"
       />
     </div>
   </div>
@@ -120,6 +126,7 @@ export const ProfileCardMobile = () => (
         borderRadius="rounded-[20px]"
         bgColor="bg-purple-1"
         textColor="text-text-color"
+        activeColor="bg-purple-2"
       />
     </div>
   </div>

@@ -18,7 +18,7 @@ const TitleAndSvg = ({ title, svg, padding, justifyContent }: TitleAndSvgProps) 
 );
 
 const TextAndSvg = ({ title, svg }: TitleAndSvgProps) => (
-  <div className={`flex items-start pb-3`}>
+  <div className='flex items-start pb-3 '>
     <span>{svg}</span>
     <p className="text font-bold pl-0.5 text-purple-7">{title}</p>
   </div>
@@ -52,6 +52,7 @@ const Footer = () => (
                 borderRadius="rounded"
                 height="h-[50px]"
                 textColor="text-white"
+                activeColor="bg-purple-7"
               />
             </div>
           </form>
