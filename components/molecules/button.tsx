@@ -31,7 +31,8 @@ interface ButtonProps{
   activeColor: string;
 }
 export const Button = ({width, height, textColor, borderRadius, text, bgColor, activeColor}: ButtonProps) => (
-  <button className={` ${width || '' } ${borderRadius || ''} inline-flex text-sm items-center ${height || 'h-10'} font-medium ${bgColor} px-5 py-2.5 justify-center ${textColor}  hover:shadow hover:opacity-80 transition ease-in-out active:${activeColor}`}   >
+  <button className={` ${width || '' } ${borderRadius || ''} inline-flex text-sm items-center ${height || 'h-10'} font-medium ${bgColor} px-5 py-2.5 justify-center ${textColor}  hover:shadow hover:opacity-80 active:${activeColor} transition ease-in-out `}   >
     {text} 
   </button>
 );
+// TODO: the active color for the newsletter button is not working 

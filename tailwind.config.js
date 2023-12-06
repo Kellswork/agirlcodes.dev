@@ -40,11 +40,13 @@ module.exports = {
         'purple-7' : '#51279B',
         'purple-5': "#724BB7",
         'purple-4': '#8662C7',
+        'purple-2': '#CFBCF2',
         'purple-1': '#EAE2F8',
         'text-color': '#1D192B',
         'place-holder-color': '#49454F',
-        'neutral-100': '#f1f5f880'
-      }
+        'neutral-100': '#f1f5f880',
+        'purple-opacity-20': '#e8def833'
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

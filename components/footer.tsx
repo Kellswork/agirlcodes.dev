@@ -39,7 +39,7 @@ const Footer = () => (
             more sent to your inbox. I&apos;ll send you an email once a month,
             no spam.
           </p>
-          <form className="flex items-center h-14 pr-0.5 border border-[#79747E] rounded">
+          <form className="flex transition ease-out delay-75 focus-within:border-2 focus-within:border-purple-7 items-center h-14 pr-0.5 border border-[#79747E] rounded">
             <input
               type="text"
               placeholder="Your Email Address"
