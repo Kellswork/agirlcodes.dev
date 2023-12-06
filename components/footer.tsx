@@ -17,10 +17,10 @@ const TitleAndSvg = ({ title, svg, padding, justifyContent }: TitleAndSvgProps) 
   </div>
 );
 
-const TextAndSvg = ({ title, svg }: TitleAndSvgProps) => (
-  <div className='flex items-start pb-3 '>
+const TextAndSvg = ({ text, svg,url }: {text: string; svg: JSX.Element; url: string}) => (
+  <div className='flex items-start pb-3  '>
     <span>{svg}</span>
-    <p className="text font-bold pl-0.5 text-purple-7">{title}</p>
+    <p className="text font-bold pl-0.5 text-purple-7 underline decoration-blue-400 hover:decoration-2 cursor-pointer"><a href={url}>{text}</a></p>
   </div>
 );
 
@@ -61,15 +61,15 @@ const Footer = () => (
         <div className="get-in-touch ft:mt-6">
           <TitleAndSvg padding="pb-3" title="Get In Touch" svg={<Globe />} justifyContent="justify-center"/>
           <div className="ft:flex ft:justify-evenly">
-            <a href="">
-              <TextAndSvg title="LinkedIn" svg={<LinkedIn />} />
-            </a>
-            <a href="">
-              <TextAndSvg title="Gmail" svg={<Gmail />} />
-            </a>
-            <a href="">
-              <TextAndSvg title="GitHub" svg={<GitHub />} />
-            </a>
+    
+              <TextAndSvg text="LinkedIn" url="https://www.linkedin.com/in/kelechi-ogbonna/" svg={<LinkedIn />} />
+ 
+
+              <TextAndSvg text="Gmail" url="" svg={<Gmail />} />
+      
+         
+              <TextAndSvg text="GitHub" url="https://github.com/Kellswork" svg={<GitHub />} />
+    
           </div>
         </div>
       </div>
