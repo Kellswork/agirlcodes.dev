@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Navigation = () => {
   return (
-    <div className="bg-slate-100">
+    <div className="bg-neutral-100">
       <BaseLayout>
         <div className="flex justify-between items-center h-20 ">
           <div>

@@ -8,7 +8,7 @@ interface Props {
 
 const BaseLayout = ({children, spacing}: Props) => {
   return (
-    <div className={`max-w-5xl my-0 mx-auto ${spacing|| ''}`} >{children}</div>
+    <div className={`max-w-5xl my-0 mx-auto ${spacing|| ''} lg:w-[94%] md:w-[85%] sm:w-[90%]`} >{children}</div>
   )
 }
 

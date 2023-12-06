@@ -14,15 +14,15 @@ interface CardProps {
 }
 
 export const BlogPostlistCard = (props: CardProps) => (
-  <div className="font-roboto max-w-[632px] py-5">
-    <h2 className="text-titleLarge font-medium pb-4">
+  <div className="font-roboto max-w-[632px] py-5 md:max-w-full ">
+    <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px]">
       Lorem Ipsum is simply dummy text of the printing
     </h2>
     <div className="pb-4">
       <FilterChipFilled />
       <span className="px-2 text-sm font-medium">7 November, 2023 </span>
     </div>
-    <div className="text-sm max-w-[600px] pb-4">
+    <div className="max-w-[600px] pb-4 md:max-w-full">
       Lorem Ipsum has been the industry&apos;s standard dummy text ever since
       the 1500s, when an unknown printer took a galley of type and scrambled it
       to make a type specimen book. It has survived not only five centuries, but
@@ -36,7 +36,7 @@ export const BlogPostlistCard = (props: CardProps) => (
 );
 
 export const ProfileCard = () => (
-  <div className="w-80 border border-[#CAC4D0] rounded-xl bg-white max-h-[680px] md:hidden">
+  <div className="w-80 border border-[#CAC4D0] rounded-xl bg-white max-h-[680px] md:hidden sm:hidden">
     <div className="relative">
       <div className="h-48 rounded-t-xl bg-purple-1 opacity-50"></div>
       <div className="absolute top-28 left-1/4 ">
@@ -83,7 +83,7 @@ export const ProfileCard = () => (
 );
 
 export const ProfileCardMobile = () => (
-  <div className="profile-card-mobile lg:hidden">
+  <div className="profile-card-mobile xl:hidden">
     <div className="flex items-center">
       <div>
         <Image
@@ -102,7 +102,7 @@ export const ProfileCardMobile = () => (
       </div>
     </div>
 
-    <div className="profile-details mt-4 mb-8 max-w-[90%]">
+    <div className="profile-details mt-4 mb-8 max-w-[90%] sm:max-w-full">
       <p className="text-left pb-3">
         Hello! I&apos;m a full-stack engineer with extensive experience in
         modern web user interface development. I specialise in React JS and

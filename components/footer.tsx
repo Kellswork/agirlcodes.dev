@@ -8,9 +8,10 @@ interface TitleAndSvgProps {
   title: string;
   svg: JSX.Element;
   padding?: string;
+  justifyContent?: string;
 }
-const TitleAndSvg = ({ title, svg, padding }: TitleAndSvgProps) => (
-  <div className={`flex items-center ${padding}`}>
+const TitleAndSvg = ({ title, svg, padding, justifyContent }: TitleAndSvgProps) => (
+  <div className={`flex items-center ${padding} ${justifyContent || ''}`}>
     <h2 className="text-titleLarge font-bold pr-2 text-purple-7">{title}</h2>
     <span>{svg}</span>
   </div>
@@ -24,10 +25,10 @@ const TextAndSvg = ({ title, svg }: TitleAndSvgProps) => (
 );
 
 const Footer = () => (
-  <div className="bg-slate-100">
+  <div className="bg-neutral-100">
     <BaseLayout>
-      <div className="flex py-12 justify-between">
-        <div className="newsletter-card max-w-lg px-8 py-4 rounded bg-white">
+      <div className="flex ft:flex-col py-8 justify-between ">
+        <div className="newsletter-card max-w-lg ft:max-w-full px-8 py-4 rounded bg-white">
           <TitleAndSvg
             padding="pb-4"
             title="Subscribe to my Newsletter"
@@ -56,9 +57,9 @@ const Footer = () => (
           </form>
         </div>
 
-        <div className="get-in-touch">
-          <TitleAndSvg padding="pb-3" title="Get In Touch" svg={<Globe />} />
-          <div>
+        <div className="get-in-touch ft:mt-6">
+          <TitleAndSvg padding="pb-3" title="Get In Touch" svg={<Globe />} justifyContent="justify-center"/>
+          <div className="ft:flex ft:justify-evenly">
             <a href="">
               <TextAndSvg title="LinkedIn" svg={<LinkedIn />} />
             </a>
