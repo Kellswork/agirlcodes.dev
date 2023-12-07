@@ -9,33 +9,28 @@ interface CardProps {
   title?: string;
   tag?: string;
   date?: string;
+  fullDate: string;
   description?: string;
-  buttonText?: string;
+  url?: string;
 }
 
-export const BlogPostlistCard = (props: CardProps) => (
-  <div className="box-border font-roboto max-w-[632px] rounded  py-4 md:max-w-full ">
-    <div className="cursor-pointer" >
-    <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px]">
-      Lorem Ipsum is simply dummy text of the printing
-    </h2>
-    <div className="pb-4">
-      <FilterChipFilled />
-      <span className="px-2 text-sm font-medium">7 November, 2023 </span>
-    </div>
-    <div className="max-w-[600px] pb-4 md:max-w-full">
-      Lorem Ipsum has been the industry&apos;s standard dummy text ever since
-      the 1500s, when an unknown printer took a galley of type and scrambled it
-      to make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting.{" "}
-    </div>
-
-    <Link
-      className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 text-sm font-medium text-purple-4"
-      href="/"
-    >
-      Learn more
-    </Link>
+export const BlogPostlistCard = ({ title, url, description,fullDate }: CardProps) => (
+  <div className="box-border font-roboto max-w-[632px] rounded  py-4 md:max-w-full">
+    <div className="cursor-pointer">
+      <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px]">
+        {title}
+      </h2>
+      <div className="pb-4">
+        <FilterChipFilled />
+        <span className="px-2 text-sm font-medium">{fullDate}</span>
+      </div>
+      <div className="max-w-[600px] pb-4 md:max-w-full">{description}</div>
+      <Link
+        className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 text-sm font-medium text-purple-4"
+        href={`/posts/${url}`}
+      >
+        Learn more
+      </Link>
     </div>
   </div>
 );
