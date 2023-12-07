@@ -18,12 +18,13 @@ export default function Post({ postData }: Props) {
       <main>
         <Navigation />
         <BaseLayout>
-          <div className="sections">
-            <article className="table-of-content">table of content</article>
-            <article>
-              <h2>{postData.frontMatter.title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <div className="sections flex justify-between">
+            <article className="max-w-[44rem] font-roboto">
+              <h2 className="text-headlineMedium font-bold">{postData.frontMatter.title}</h2>
+              <div className="" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </article>
+            <article className="table-of-content">table of content</article>
+
           </div>
         </BaseLayout>
       </main>
