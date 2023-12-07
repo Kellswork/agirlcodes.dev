@@ -4,15 +4,14 @@ import Navigation from '../components/navigation';
 import MainContent from '../components/mainContent';
 import Footer from '../components/footer';
 
-interface HomeProps {
-  allPostsData : PostDataProps[]
+interface IndexProp {
+  allPostsData: PostDataProps[]
 }
-
-export default function Home({allPostsData}: HomeProps) {
+export default function Home({allPostsData}: IndexProp) {
   return (
     <div className='border-t-8 border-purple-5'>
       <Navigation/>
-      <MainContent/>
+      <MainContent allPostsData = {allPostsData}/>
       <Footer/>
     </div>
   );
