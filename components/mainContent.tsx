@@ -7,7 +7,6 @@ import BlogPostList from "./blogPostList";
 
 
 const MainContent = ({allPostsData}: {allPostsData:PostDataProps[]}) => {
-  console.log('posts', allPostsData)
   return (
     <BaseLayout>
       <div className="main-content flex mt-14 mb-8 justify-between md:flex-col-reverse sm:flex-col-reverse">
