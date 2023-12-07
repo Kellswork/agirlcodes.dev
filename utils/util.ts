@@ -12,6 +12,8 @@ interface FrontMatter {
   description: string;
   fullDate: string;
   url: string;
+  tags: string | string[];
+  image: string;
 }
 export interface PostDataProps {
   id: string;
@@ -86,8 +88,8 @@ export async function getPostData(id: string): Promise<PostDataProps>{
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  .process(matterResult.content);
+const contentHtml = processedContent.toString();
 
   // Combine the data with the id
   return {
