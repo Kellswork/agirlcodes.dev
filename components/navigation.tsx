@@ -3,9 +3,9 @@ import BaseLayout from "./baseLayout";
 import Head from "next/head";
 import Link from "next/link";
 
-const NavLink = ({ text, link }: { text: string; link: string }) => (
+const NavLink = ({ text, link, spacing }: { text: string; link: string, spacing?: string }) => (
   <Link
-    className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 mr-5"
+    className={ `inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 ${spacing || ''}`}
     href={link}
   >
     {text}
@@ -22,7 +22,7 @@ const Navigation = () => {
           </Link>
 
           <div className="font-roboto font-medium  text-base">
-            <NavLink link="/" text="Home" />
+            <NavLink link="/" text="Home" spacing="mr-5" />
             <NavLink link="/" text="Portfolio" />
           </div>
         </div>
