@@ -9,6 +9,9 @@ const postsDirectory = path.join(process.cwd(), "posts");
 interface FrontMatter {
   title: string;
   date: string;
+  description: string;
+  fullDate: string;
+  url: string;
 }
 export interface PostDataProps {
   id: string;
