@@ -13,7 +13,7 @@ In this article, I will be sharing 6 different JavaScript methods you can use to
 
 Let's start with creating an empty object using literal syntax.
 
-```jsx
+```js
 const myObject = {}
 ```
 
@@ -22,7 +22,7 @@ const myObject = {}
 This method returns an array containing the [key, value] pairs found in the object passed in as an argument.
 To check if an object is empty, check if the length of the array is 0.
 
-```jsx
+```js
 Object.entries(myObject).length === 0;
 // 0
 
@@ -34,7 +34,7 @@ return Object.entries(myObject).length === 0 ? true: false
 
 This method returns an array of strings that contains enumerable properties of the object passed as an argument. It returns an array of *[ keys ]*
 
-```jsx
+```js
 Object.keys(myObject).length === 0;
 // 0
 
@@ -44,7 +44,7 @@ return Object.keys(myObject).length === 0 ? true: false
 
 You can also create an isEmpty function and pass in the object as a parameter
 
-```jsx
+```js
 function isEmpty (myObject) {
 
 return Object.keys(myObject).length === 0 ? true: false
@@ -58,7 +58,7 @@ isEmpty(myObject); // true
 
 It returns an array of strings that corresponds to the properties found in the object passed as an argument. This method calls GetOwnPropertyKeys under the hood.
 
-```jsx
+```js
  Object.getOwnPropertyNames(myObject).length === 0;
 // 0
 
@@ -69,7 +69,7 @@ if(Object.getOwnPropertyNames(myObject).length === 0) { // return something};
 
 It checks if the `[key]` is present in `myObject`. Use this when you know the properties that the object is supposed to have.
 
-```jsx
+```js
 let result = '';
 
 my.object.id // undefined
@@ -87,7 +87,7 @@ Note: this won't work `myObject[id]`, JavaScript will throw an error.
 
 [_.isEmpty(collection)](https://underscorejs.org/#isEmpty) Returns true if **collection** has no elements. For strings and array-like objects _.isEmpty checks if the length property is 0.
 
-```jsx
+```js
 _.isEmpty([1, 2, 3]);
 
 => false
@@ -101,7 +101,7 @@ _.isEmpty({});
 
 [_.isEmpty()](https://lodash.com/docs/#isEmpty) Method Checks if the value is an empty object, collection, map, or set. Objects are considered empty if they have no own enumerable string keyed properties.
 
-```jsx
+```js
 _.isEmpty({ 'a': 1 });
 // => false
 
