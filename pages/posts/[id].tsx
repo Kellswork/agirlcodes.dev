@@ -3,28 +3,71 @@ import Layout from "../../components/layout";
 import { getAllPostIds, getPostData, PostDataProps } from "../../utils/util";
 import Navigation from "../../components/navigation";
 import BaseLayout from "../../components/baseLayout";
+import Image from "next/image";
+import hljs from "highlight.js";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import Markdown from "react-markdown";
 
 interface Props {
   postData: PostDataProps;
 }
 
 export default function Post({ postData }: Props) {
+ 
   return (
     <div>
       <Head>
         <title>{postData.frontMatter.title}</title>
-      </Head>
 
+      </Head>
       <main>
         <Navigation />
         <BaseLayout>
           <div className="sections flex justify-between">
             <article className="max-w-[44rem] font-roboto">
-              <h2 className="text-headlineMedium font-bold">{postData.frontMatter.title}</h2>
-              <div className="" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              <h2 className="text-headlineMedium font-bold mb-4">
+                {postData.frontMatter.title}
+              </h2>
+              <Image
+                className="rounded mb-4"
+                src={postData.frontMatter.image}
+                width={715}
+                height={300}
+                alt="image for the article title"
+              />
+              <div className="markdown-content">
+                <Markdown
+                
+                  components={{
+                    code(props) {
+                      const { children, className, node, ...rest } = props;
+                      const match = /language-(\w+)/.exec(className || "");
+                      return match ? (
+                        <SyntaxHighlighter
+                          {...rest}
+                          pretag="div"
+                          language={match[1]}
+                          style={vscDarkPlus}
+                          customStyle={{
+                            borderRadius: "4px",
+                          }}
+                        >
+                          {String(children).replace(/>\n$/, "")}
+                        </SyntaxHighlighter>
+                      ) : (
+                        <code {...rest} className={className}>
+                          {children}
+                        </code>
+                      );
+                    },
+                  }}
+                >
+                  {postData.contentHtml}
+                </Markdown>
+              </div>
             </article>
             <article className="table-of-content">table of content</article>
-
           </div>
         </BaseLayout>
       </main>
@@ -45,7 +88,6 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  console.log("params", params);
   const postData = await getPostData(params.id);
   return {
     props: {

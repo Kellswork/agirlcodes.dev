@@ -3,6 +3,17 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { unified } from "unified";
+import rehypeParse from "rehype-parse";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeHighlight from "rehype-highlight";
+import rehypeStringify from "rehype-stringify";
+import remarkRehype from "remark-rehype";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import { rehype } from "rehype";
+import {read} from 'to-vfile'
+
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -21,9 +32,8 @@ export interface PostDataProps {
   frontMatter: FrontMatter;
 }
 
-
 // this is for the index page that displays all blos post
-export function getSortedPostsData(): PostDataProps[]{
+export function getSortedPostsData(): PostDataProps[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -40,7 +50,7 @@ export function getSortedPostsData(): PostDataProps[]{
     // Combine the data with the id
     return {
       id,
-      frontMatter: matterResult.data as FrontMatter
+      frontMatter: matterResult.data as FrontMatter,
     };
   });
   // Sort posts by date
@@ -78,23 +88,26 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id: string): Promise<PostDataProps>{
+export async function getPostData(id: string): Promise<PostDataProps> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
+  console.log('mate', matterResult)
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-  .process(matterResult.content);
-const contentHtml = processedContent.toString();
+  // const processedContent = await remark()
+  //   .use(html)
+  //   .process(matterResult.content);
+  // const contentHtml = processedContent.toString();
+
+
 
   // Combine the data with the id
   return {
     id,
-    contentHtml,
+    contentHtml: matterResult.content,
     frontMatter: matterResult.data as FrontMatter,
   };
 }
