@@ -1,18 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
-import { unified } from "unified";
-import rehypeParse from "rehype-parse";
-import rehypeSanitize from "rehype-sanitize";
-import rehypeHighlight from "rehype-highlight";
-import rehypeStringify from "rehype-stringify";
-import remarkRehype from "remark-rehype";
-import remarkParse from "remark-parse";
-import remarkGfm from "remark-gfm";
-import { rehype } from "rehype";
-import {read} from 'to-vfile'
 
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -94,7 +82,6 @@ export async function getPostData(id: string): Promise<PostDataProps> {
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
-  console.log('mate', matterResult)
 
   // Use remark to convert markdown into HTML string
   // const processedContent = await remark()

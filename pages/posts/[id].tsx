@@ -3,13 +3,12 @@ import Layout from "../../components/layout";
 import { getAllPostIds, getPostData, PostDataProps } from "../../utils/util";
 import Navigation from "../../components/navigation";
 import BaseLayout from "../../components/baseLayout";
-import Image from "next/image";
 import SyntaxHighlighter, {
   Prism,
   SyntaxHighlighterProps,
 } from "react-syntax-highlighter";
 import { atelierCaveLight } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import Markdown from "react-markdown";
+import Markdown from 'react-markdown';
 
 interface Props {
   postData: PostDataProps;

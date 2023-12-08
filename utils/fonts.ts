@@ -1,4 +1,4 @@
-import { Pacifico, Roboto} from 'next/font/google'
+import { Pacifico, Roboto, Space_Mono} from 'next/font/google'
 
 
 export const pacifico = Pacifico({
@@ -10,5 +10,11 @@ export const pacifico = Pacifico({
 export const roboto = Roboto({
   variable: '--font-roboto',
   weight: ['400', '500', '700'],
+  subsets: ['latin'],
+})
+
+export const spaceMono = Space_Mono({
+  variable: '--font-spaceMono',
+  weight: ['400',  '700'],
   subsets: ['latin'],
 })

@@ -10,9 +10,9 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'xl': {'min': '998px'},
-      'lg': {'min': '998px', 'max': '1090px'},
-      'md': {'min': '668px', 'max': '997px'},
+      'xl': {'min': '1060px'},
+      'lg': {'min': '1060px', 'max': '1290px'},
+      'md': {'min': '668px', 'max': '1060px'},
       'sm' : {'max': '667px'},
       'ft' :{ 'max': '820px'}
     },
@@ -31,6 +31,7 @@ module.exports = {
       },
       fontSize: {
         titleLarge: ["1.375rem", { lineHeight: "28px" }],
+        headlineLarge: ["2rem", { lineHeight: "40px" }],
         headlineMedium: ["1.75rem", { lineHeight: "26px" }],
         headlineSmall: ["1.5rem", { lineHeight: "32px" }],
       },
@@ -43,6 +44,7 @@ module.exports = {
         'purple-2': '#CFBCF2',
         'purple-1': '#EAE2F8',
         'text-color': '#1D192B',
+        'text-color-2': '20324c',
         'place-holder-color': '#49454F',
         'neutral-100': '#f1f5f880',
         'purple-opacity-20': '#e8def833'
