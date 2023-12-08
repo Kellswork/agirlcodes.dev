@@ -2,7 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-.markdown-content code {
+/* .markdown-content code {
   font-size: 14px !important;
   font-family: var(--font-spaceMono) !important;
+} */
+h1, h2, h3, h4, h5, h6 {
+  color: #0f172a;
+}
+.markdown-content {
+  color: #20324c;
+}
+.markdown-content h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 24px 0px;
+ 
+}
+
+.markdown-content p {
+  margin: 16px 0px;
+  line-height: 1.75;
+}
+
+.markdown-content p code {
+  color: #51279B;
+  background: #51279b1f;
+  padding: 2px;
+  border-radius: 4px;
+}
+.markdown-content p code::before {
+ content: '`';
+}
+.markdown-content p code::after {
+  content: '`';
+ }
+
+ .markdown-content p a{
+  text-decoration: underline;
+  text-decoration-color: #7dd3fc;
+  color: #0ea5e9;
+}
+
+.markdown-content p em{
+  font-size: 20px;
+  font-weight: bold;
+  color: #51279B;
+  font-style: unset;
 }

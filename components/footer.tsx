@@ -24,11 +24,13 @@ const TextAndSvg = ({ text, svg,url }: {text: string; svg: JSX.Element; url: str
   </div>
 );
 
+// TODO: Remove the `hidden` class from newslwtter when you are ready to // implement it. take the chance to update the article too.
+
 const Footer = () => (
   <div className="bg-neutral-100">
     <BaseLayout>
       <div className="flex ft:flex-col py-8 justify-between ">
-        <div className="newsletter-card max-w-lg ft:max-w-full px-8 py-4 rounded bg-white">
+        <div className=" hidden newsletter-card max-w-lg ft:max-w-full px-8 py-4 rounded bg-white">
           <TitleAndSvg
             padding="pb-4"
             title="Subscribe to my Newsletter"

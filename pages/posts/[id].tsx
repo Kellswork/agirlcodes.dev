@@ -4,9 +4,11 @@ import { getAllPostIds, getPostData, PostDataProps } from "../../utils/util";
 import Navigation from "../../components/navigation";
 import BaseLayout from "../../components/baseLayout";
 import Image from "next/image";
-import hljs from "highlight.js";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import SyntaxHighlighter, {
+  Prism,
+  SyntaxHighlighterProps,
+} from "react-syntax-highlighter";
+import { atelierCaveLight } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import Markdown from "react-markdown";
 
 interface Props {
@@ -14,33 +16,29 @@ interface Props {
 }
 
 export default function Post({ postData }: Props) {
- 
   return (
     <div>
       <Head>
         <title>{postData.frontMatter.title}</title>
-
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png"
+        ></link>
       </Head>
       <main>
         <Navigation />
         <BaseLayout>
-          <div className="sections flex justify-between">
-            <article className="max-w-[44rem] font-roboto">
-              <h2 className="text-headlineMedium font-bold mb-4">
-                {postData.frontMatter.title}
-              </h2>
-              <Image
-                className="rounded mb-4"
-                src={postData.frontMatter.image}
-                width={715}
-                height={300}
-                alt="image for the article title"
-              />
-              <div className="markdown-content">
+          <div className=" font-roboto mt-10">
+            <h2 className="text-headlineLarge font-bold mb-4 max-w-[44rem] mx-auto sm:text-headlineSmall">
+              {postData.frontMatter.title}
+            </h2>
+            <article className="">
+              <div className="markdown-content max-w-[44rem] mx-auto ">
                 <Markdown
-                
                   components={{
-                    code(props) {
+                    code(props: SyntaxHighlighterProps) {
                       const { children, className, node, ...rest } = props;
                       const match = /language-(\w+)/.exec(className || "");
                       return match ? (
@@ -48,9 +46,18 @@ export default function Post({ postData }: Props) {
                           {...rest}
                           pretag="div"
                           language={match[1]}
-                          style={vscDarkPlus}
+                          style={atelierCaveLight}
                           customStyle={{
                             borderRadius: "4px",
+                            marginTop:"8px",
+                            marginBottom: '24px',
+                            padding: '1rem',
+                          }}
+                          codeTagProps={{
+                            style: {
+                              fontSize: "14px",
+                              fontFamily: `var(--font-spaceMono)`,
+                            },
                           }}
                         >
                           {String(children).replace(/>\n$/, "")}
@@ -67,7 +74,6 @@ export default function Post({ postData }: Props) {
                 </Markdown>
               </div>
             </article>
-            <article className="table-of-content">table of content</article>
           </div>
         </BaseLayout>
       </main>

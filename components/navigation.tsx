@@ -23,7 +23,7 @@ const Navigation = () => {
 
           <div className="font-roboto font-medium  text-base">
             <NavLink link="/" text="Home" spacing="mr-5" />
-            <NavLink link="/" text="Portfolio" />
+            {/* <NavLink link="/" text="Portfolio" /> */}
           </div>
         </div>
       </BaseLayout>
@@ -32,3 +32,5 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+//TODO: add the portfolio link back when you are done building the portfolio page

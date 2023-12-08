@@ -7,21 +7,21 @@ import profilepic from "../../public/images/profile.jpg";
 
 interface CardProps {
   title?: string;
-  tag?: string;
+  tags?: string | string[];
   date?: string;
   fullDate: string;
   description?: string;
   url?: string;
 }
 
-export const BlogPostlistCard = ({ title, url, description,fullDate }: CardProps) => (
+export const BlogPostlistCard = ({ title, url, description,fullDate, tags }: CardProps) => (
   <div className="box-border font-roboto max-w-[632px] rounded  py-4 md:max-w-full">
-    <div className="cursor-pointer">
-      <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px]">
-        {title}
+   
+      <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px] hover:opacity-80">
+       <Link href={`/posts/${url}`}> {title}</Link>
       </h2>
       <div className="pb-4">
-        <FilterChipFilled />
+        <FilterChipFilled tags={tags}/>
         <span className="px-2 text-sm font-medium">{fullDate}</span>
       </div>
       <div className="max-w-[600px] pb-4 md:max-w-full">{description}</div>
@@ -31,7 +31,7 @@ export const BlogPostlistCard = ({ title, url, description,fullDate }: CardProps
       >
         Learn more
       </Link>
-    </div>
+
   </div>
 );
 
@@ -78,6 +78,7 @@ export const ProfileCard = () => (
         bgColor="bg-purple-1"
         textColor="text-text-color"
         activeColor="bg-purple-2"
+        url="https://www.linkedin.com/in/kelechi-ogbonna/"
       />
     </div>
   </div>

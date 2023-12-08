@@ -13,10 +13,11 @@ export default function Layout({ children }: LayoutProps){
   return (
     <div>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="title"
-          content="Agirlcodes"
+       <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png"
         />
       </Head>
       

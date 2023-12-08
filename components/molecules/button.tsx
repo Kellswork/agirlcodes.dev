@@ -15,9 +15,10 @@ export const FilterChipSelected = () => (
   </div>
 );
 
-export const FilterChipFilled = () => (
+export const FilterChipFilled = ({tags}:{tags: string | string[]}) => (
+
   <div className="inline-flex justify-center items-center bg-teal-100 rounded-lg h-7 hover:shadow hover:opacity-80 hover:bg-teal-200 active:bg-teal-300 cursor-pointer">
-    <span className="text-sm px-2">Filter chip</span>
+    <span className="text-sm px-2">{tags}</span>
   </div>
 );
 
@@ -29,10 +30,14 @@ interface ButtonProps{
   bgColor: string;
   textColor: string;
   activeColor: string;
+  url?: string;
 }
-export const Button = ({width, height, textColor, borderRadius, text, bgColor, activeColor}: ButtonProps) => (
+
+export const Button = ({width, height, textColor, borderRadius, text, bgColor, activeColor, url}: ButtonProps) => (
+  <a href={url || ''} target="blank">
   <button className={` ${width || '' } ${borderRadius || ''} inline-flex text-sm items-center ${height || 'h-10'} font-medium ${bgColor} px-5 py-2.5 justify-center ${textColor}  hover:shadow hover:opacity-80 active:${activeColor} transition ease-in-out `}   >
     {text} 
   </button>
+  </a>
 );
 // TODO: the active color for the newsletter button is not working 
