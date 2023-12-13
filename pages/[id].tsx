@@ -6,7 +6,8 @@ import SyntaxHighlighter, {
   SyntaxHighlighterProps,
 } from "react-syntax-highlighter";
 import { atelierCaveLight } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import Markdown from 'react-markdown';
+import Markdown from "react-markdown";
+import Script from "next/script";
 
 interface Props {
   postData: PostDataProps;
@@ -33,14 +34,23 @@ export default function Post({ postData }: Props) {
         />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={postData.frontMatter.title} />
-        <meta property="og:description" content={postData.frontMatter.description} />
+        <meta
+          property="og:description"
+          content={postData.frontMatter.description}
+        />
         <meta
           property="og:image"
           content={`https://www.agirlcodes.dev${postData.frontMatter.image}`}
         />
-        <meta name="description" content={postData.frontMatter.description}></meta>
+        <meta
+          name="description"
+          content={postData.frontMatter.description}
+        ></meta>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:description" content={postData.frontMatter.description} />
+        <meta
+          name="twitter:description"
+          content={postData.frontMatter.description}
+        />
         <meta name="twitter:title" content={postData.frontMatter.title} />
         <meta
           name="twitter:image"
@@ -62,6 +72,20 @@ export default function Post({ postData }: Props) {
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <title>{postData.frontMatter.title}</title>
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XDTTRJGD01"
+      />
+
+      <Script id="google-analytics">
+        {`
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'G-XDTTRJGD01');
+ `}
+      </Script>
       <main>
         <Navigation />
         <BaseLayout>
@@ -84,9 +108,9 @@ export default function Post({ postData }: Props) {
                           style={atelierCaveLight}
                           customStyle={{
                             borderRadius: "4px",
-                            marginTop:"8px",
-                            marginBottom: '24px',
-                            padding: '1rem',
+                            marginTop: "8px",
+                            marginBottom: "24px",
+                            padding: "1rem",
                           }}
                           codeTagProps={{
                             style: {
