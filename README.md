@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Blog Website: agirlcodes.dev
+
+Built with NextJs, TypeScript, tailwind

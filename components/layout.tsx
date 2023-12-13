@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 interface LayoutProps {
@@ -9,7 +7,7 @@ interface LayoutProps {
 }
 
 const siteDetails ={
-  title: "agirlcodes.dev",
+  title: "agirlcodes",
   description: "Welcome to my software development blog! Here, I provide valuable insights into modern web development using various technologies such as React JS, Typescript, Express/Node JS, Golang, and PostgreSQL. If you're looking for comprehensive articles on these technologies, you've come to the right place.",
   image: "/agirlcodes.jpg",
 }

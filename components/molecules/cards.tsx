@@ -14,29 +14,33 @@ interface CardProps {
   url?: string;
 }
 
-export const BlogPostlistCard = ({ title, url, description,fullDate, tags }: CardProps) => (
+export const BlogPostlistCard = ({
+  title,
+  url,
+  description,
+  fullDate,
+  tags,
+}: CardProps) => (
   <div className="box-border font-roboto max-w-[632px] rounded  py-4 md:max-w-full">
-   
-      <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px] hover:opacity-80">
-       <Link href={`/posts/${url}`}> {title}</Link>
-      </h2>
-      <div className="pb-4">
-        <FilterChipFilled tags={tags}/>
-        <span className="px-2 text-sm font-medium">{fullDate}</span>
-      </div>
-      <div className="max-w-[600px] pb-4 md:max-w-full">{description}</div>
-      <Link
-        className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 text-sm font-medium text-purple-4"
-        href={`/posts/${url}`}
-      >
-        Learn more
-      </Link>
-
+    <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px] hover:opacity-80">
+      <Link href={`/posts/${url}`}> {title}</Link>
+    </h2>
+    <div className="pb-4">
+      <FilterChipFilled tags={tags} />
+      <span className="px-2 text-sm font-medium">{fullDate}</span>
+    </div>
+    <div className="max-w-[600px] pb-4 md:max-w-full">{description}</div>
+    <Link
+      className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 text-sm font-medium text-purple-4"
+      href={`/posts/${url}`}
+    >
+      Learn more
+    </Link>
   </div>
 );
 
 export const ProfileCard = () => (
-  <div className="w-80 border border-[#CAC4D0] rounded-xl bg-white max-h-[680px] md:hidden sm:hidden">
+  <div className="w-80 border border-[#CAC4D0] rounded-xl bg-white max-h-[625px] md:hidden sm:hidden">
     <div className="relative">
       <div className="h-48 rounded-t-xl bg-purple-1 opacity-50"></div>
       <div className="absolute top-28 left-1/4 ">
@@ -60,13 +64,15 @@ export const ProfileCard = () => (
       </p>
 
       <p className="text-left text-sm pb-3">
-      Hey there! I&apos;m Kelechi Ogbonna, a full-stack engineer with extensive experience in React JS, Typescript, Express/Node JS, Golang, and PostgreSQL. 
+        Hey there! I&apos;m Kelechi Ogbonna, a full-stack engineer with
+        extensive experience in React JS, Typescript, Express/Node JS, Golang,
+        and PostgreSQL.
       </p>
       <p className="text-left text-sm pb-3">
-      I am passionate about sharing my knowledge through my writing. Please feel free to contact me if you&apos;re interested in collaborating together.
+        I am passionate about sharing my knowledge through my writing. Please
+        feel free to contact me if you&apos;re interested in collaborating
+        together.
       </p>
-
-
 
       <Button
         text="VIEW PROFILE"
@@ -103,15 +109,14 @@ export const ProfileCardMobile = () => (
 
     <div className="profile-details mt-4 mb-8 max-w-[90%] sm:max-w-full">
       <p className="text-left pb-3">
-        Hello! I&apos;m a full-stack engineer with extensive experience in
-        modern web user interface development. I specialise in React JS and
-        Typescript for front-end work, and Express/Node JS, Golang and
-        PostgreSQL for back-end development.
+        Hey there! I&apos;m Kelechi Ogbonna, a full-stack engineer with
+        extensive experience in React JS, Typescript, Express/Node JS, Golang,
+        and PostgreSQL.
       </p>
       <p className="text-left pb-4">
-        I share insights on these technologies. Check out my profile to learn
-        more about my work and feel free to contact me if you&apos;re interested
-        in working together.
+        I am passionate about sharing my knowledge through my writing. Please
+        feel free to contact me if you&apos;re interested in collaborating
+        together.
       </p>
 
       <Button
