@@ -60,16 +60,13 @@ export const ProfileCard = () => (
       </p>
 
       <p className="text-left text-sm pb-3">
-        Hello! I&apos;m a full-stack engineer with extensive experience in
-        modern web user interface development. I specialise in React JS and
-        Typescript for front-end work, and Express/Node JS, Golang and
-        PostgreSQL for back-end development.
+      Hey there! I&apos;m Kelechi Ogbonna, a full-stack engineer with extensive experience in React JS, Typescript, Express/Node JS, Golang, and PostgreSQL. 
       </p>
-      <p className="text-left text-sm pb-4">
-        I share insights on these technologies. Check out my profile to learn
-        more about my work and feel free to contact me if you&apos;re interested
-        in working together.
+      <p className="text-left text-sm pb-3">
+      I am passionate about sharing my knowledge through my writing. Please feel free to contact me if you&apos;re interested in collaborating together.
       </p>
+
+
 
       <Button
         text="VIEW PROFILE"
