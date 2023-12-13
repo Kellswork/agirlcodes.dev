@@ -23,7 +23,7 @@ export const BlogPostlistCard = ({
 }: CardProps) => (
   <div className="box-border font-roboto max-w-[632px] rounded  py-4 md:max-w-full">
     <h2 className="text-titleLarge font-medium pb-4 md:text-[20px] sm:text-[20px] hover:opacity-80">
-      <Link href={`/posts/${url}`}> {title}</Link>
+      <Link href={`/${url}`}> {title}</Link>
     </h2>
     <div className="pb-4">
       <FilterChipFilled tags={tags} />
@@ -32,7 +32,7 @@ export const BlogPostlistCard = ({
     <div className="max-w-[600px] pb-4 md:max-w-full">{description}</div>
     <Link
       className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 text-sm font-medium text-purple-4"
-      href={`/posts/${url}`}
+      href={`/${url}`}
     >
       Learn more
     </Link>
