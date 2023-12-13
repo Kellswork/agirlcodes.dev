@@ -1,10 +1,8 @@
 import Head from "next/head";
-import Layout from "../../components/layout";
 import { getAllPostIds, getPostData, PostDataProps } from "../../utils/util";
 import Navigation from "../../components/navigation";
 import BaseLayout from "../../components/baseLayout";
 import SyntaxHighlighter, {
-  Prism,
   SyntaxHighlighterProps,
 } from "react-syntax-highlighter";
 import { atelierCaveLight } from "react-syntax-highlighter/dist/cjs/styles/hljs";
@@ -25,6 +23,44 @@ export default function Post({ postData }: Props) {
           sizes="96x96"
           href="/favicon-96x96.png"
         ></link>
+      </Head>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={postData.frontMatter.description} />
+        <meta
+          property="og:url"
+          content={`https://www.agirlcodes.dev${postData.frontMatter.url}`}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={postData.frontMatter.title} />
+        <meta property="og:description" content={postData.frontMatter.description} />
+        <meta
+          property="og:image"
+          content={`https://www.agirlcodes.dev${postData.frontMatter.image}`}
+        />
+        <meta name="description" content={postData.frontMatter.description}></meta>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content={postData.frontMatter.description} />
+        <meta name="twitter:title" content={postData.frontMatter.title} />
+        <meta
+          name="twitter:image"
+          content={`https://www.agirlcodes.dev${postData.frontMatter.image}`}
+        />
+        <meta name="twitter:site" content="@kelly_perrie" />
+        <meta name="twitter:creator" content="@kelly_perrie" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="canonical"
+          href={`https://www.agirlcodes.dev${postData.frontMatter.url}`}
+        ></link>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png"
+        ></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <title>{postData.frontMatter.title}</title>
       </Head>
       <main>
         <Navigation />
