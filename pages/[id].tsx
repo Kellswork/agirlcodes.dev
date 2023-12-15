@@ -106,6 +106,7 @@ export default function Post({ postData }: Props) {
                           pretag="div"
                           language={match[1]}
                           style={atelierCaveLight}
+                          showLineNumbers
                           customStyle={{
                             borderRadius: "4px",
                             marginTop: "8px",
