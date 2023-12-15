@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 import { getAllPostIds, getPostData, PostDataProps } from "../utils/util";
 import Navigation from "../components/navigation";
 import BaseLayout from "../components/baseLayout";
@@ -93,11 +94,12 @@ export default function Post({ postData }: Props) {
             <h2 className="text-headlineLarge font-bold mb-4 max-w-[44rem] mx-auto sm:text-headlineSmall">
               {postData.frontMatter.title}
             </h2>
-           
+
             <article className="">
-            
               <div className="markdown-content max-w-[44rem] mx-auto ">
-              <p className="text-sm font-medium text-purple-7">{postData.frontMatter.fullDate}</p>
+                <p className="text-sm font-medium text-purple-7">
+                  Published on {postData.frontMatter.fullDate}
+                </p>
                 <Markdown
                   components={{
                     code(props: SyntaxHighlighterProps) {
@@ -140,6 +142,7 @@ export default function Post({ postData }: Props) {
           </div>
         </BaseLayout>
       </main>
+      <Analytics />
     </div>
   );
 }

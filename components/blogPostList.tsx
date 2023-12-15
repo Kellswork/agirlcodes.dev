@@ -29,7 +29,7 @@ const BlogPostList = ({posts}:{posts: PostDataProps[]}) => {
       </div> */}
 
       <div className="post-list mt-4">
-        {sortBlogPosts.map((post) => <BlogPostlistCard key={post.id} title={post.frontMatter.title} description={post.frontMatter.description} fullDate={post.frontMatter.fullDate} url={post.id} tags={post.frontMatter.tags}/>)}
+        {sortBlogPosts.map((post) => <BlogPostlistCard key={post.id} title={post.frontMatter.title} description={post.frontMatter.description} date={post.frontMatter.date} url={post.id} tags={post.frontMatter.tags}/>)}
       </div>
     </>
   );

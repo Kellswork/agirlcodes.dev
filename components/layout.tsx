@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/react';
 
 interface LayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -62,7 +63,9 @@ export default function Layout({ children, className }: LayoutProps) {
  `}
       </Script>
 
-      <main>{children}</main>
+      <main>{children}
+      <Analytics />
+      </main>
     </div>
   );
 }

@@ -9,7 +9,7 @@ interface CardProps {
   title?: string;
   tags?: string | string[];
   date?: string;
-  fullDate: string;
+  fullDate?: string;
   description?: string;
   url?: string;
 }
@@ -18,7 +18,7 @@ export const BlogPostlistCard = ({
   title,
   url,
   description,
-  fullDate,
+  date,
   tags,
 }: CardProps) => (
   <div className="box-border font-roboto max-w-[632px] rounded  py-4 md:max-w-full">
@@ -27,7 +27,7 @@ export const BlogPostlistCard = ({
     </h2>
     <div className="pb-4">
       <FilterChipFilled tags={tags} />
-      <span className="px-2 text-sm font-medium">{fullDate}</span>
+      <span className="px-2 text-sm font-medium text-slate-600">{date}</span>
     </div>
     <div className="max-w-[600px] pb-4 md:max-w-full">{description}</div>
     <Link
