@@ -1,10 +1,11 @@
 ---
 title: 'Build a Golang Todo App Backend: A Step-by-Step Guide'
-date: 13-12-2023
-fullDate: Monday, 13 December 2023
+date: 15-12-2023
+fullDate: Friday, 15 December 2023
 tags: Go
+image: /posts-images/golang-todo-app/golang-todo-app-tutorial.jpg
 description: "Learn how to build a Todo app backend with Golang.
-You will learn how to build CRUD REST API endpoints, connect to a MongoDB database with Docker, create a server and shut down the server gracefully and more."
+You will learn how to build CRUD REST API endpoints, connect to a MongoDB database with Docker, create a server, shut down the server gracefully and more; It is beginner-friendly."
 url: '/build-todo-app-backend-golang-tutorial'
 ---
 
@@ -12,21 +13,21 @@ In this tutorial, you will learn how to build a **Todo app backend with Golang**
 
 If you are new to programming or a Dev who desires to learn Golang, this is a way you can slowly introduce yourself to the language and understand the basics and how building APIs work in Go.
 
-It is beginner friendly, I explain the function of each line of code so you can understand what the code does. You will learn how to build CRUD REST API endpoints, connect to a MongoDB database with Docker, create a server and shut down the server gracefully, test the APIs on Postman and consume the APIs in the Frontend using Go html/templates(HTML, CSS and JavaScript).
+It is beginner-friendly, and I explain the function of each line of code so you can understand what the code does. You will learn how to build CRUD REST API endpoints, connect to a MongoDB database with Docker, create a server and shut down the server gracefully, test the APIs on Postman and consume the APIs in the Frontend using Go html/templates(HTML, CSS and JavaScript).
 
 ## Prerequisite
 
-You don’t need to know Golang, but I advise you to go through  [A Tour of Golang](https://go.dev/tour/list) to understand how **variables**, **loops** and **if statements** work.
+You don’t need to know Golang, but I advise you to go through  [A Tour of Go](https://go.dev/tour/list) to understand how **variables**, **loops** and **if statements** work.
 
-To follow along;
+To follow along,
 
 1. Install [Docker](https://docs.docker.com/engine/install/) and [Golang](https://go.dev/doc/install). Docker is for the database provision.
-2. You have gone through the BASICS part on A Tour of Go.
+2. You have gone through the BASICS part on [A Tour of Go](https://go.dev/tour/list).
 
 ## What we will build
 
 - REST API endpoints: Create, Get, Update, and Delete API endpoints for the To-do App.
-- Use mongo db for the database connection and storage.
+- Use Mongo DB for the database connection and storage.
 - Postman to test the endpoints
 
 ## Build Todo APIs in these Steps;
@@ -49,7 +50,7 @@ The `main.go` file will serve as the entry point to the project. In this project
 
 #### Download the packages we need
 
-To download packages, open the project folder in a terminal, and run the commands one after the other. 
+To download packages, open the project folder in a terminal and run the commands one after the other. 
 
 The `go.mod` file shows a list of all the packages downloaded.
 
@@ -81,7 +82,7 @@ Your project file structure should look like this;
 
 Note: `go.mod` and `go.sum` files are auto-generated.
 
-Import the downloaded packages and some in-built Go packages we require to build the todo app backend. VS Code will import other in-built Go packages we are yet to import while building the endpoints. If the package is not available, the linter will prompt you to download it.
+Import the downloaded packages and some in-built Go packages we require to build the todo app backend. VS Code will import other in-built Go packages we are yet to import while building the endpoints. If the package is unavailable, the linter will prompt you to download it.
 
 ```go
 package main
@@ -102,7 +103,7 @@ import (
 )
 ```
 
-Note that when you save, Go editor will delete unused imports. so these imports will disappear if you save without using them.
+Note that when you save, **Go** editor will delete unused imports. So these imports will disappear if you save without using them.
 
 #### Create variables to store values
 
@@ -149,11 +150,11 @@ type (
 )
 ```
 
-Struct tags like `json:"id"` specifies the field's name in this case `id` for when the struct's contents are serialised into JSON.
+Struct tags like `json:"id"` specifies the field's name, in this case `id` for when the struct's contents are serialised into JSON.
 
 ### 3. Create an init function and connect to a database
 
-We use the init function to set up and initialise the database and To create a new renderer `rnd`. in Go,The init function always runs before any other function in a package, in this case it will run before `func main`.
+We use the init function to set up and initialise the database and To create a new renderer, `rnd`. In Go,the init function always runs before any other function in a package; in this case, it will run before `func main`.
 
 ```go
 func init() {
@@ -185,7 +186,7 @@ If an error occurs and the database connection is unsuccessful, `checkError` wil
 
 If the connection is successful, we create a new database, pass in the **`dbName`** const as the database name and save the value in the **`db`** variable.
 
-`checkError` is a function that has not yet been defined so Go linter will show an undefined error.
+`checkError` is a function that has not yet been defined, so Go linter will show an undefined error.
 
 #### Provision and Connect to the Database with Docker
 
@@ -193,13 +194,13 @@ Note you don’t have to use Docker for this step. There are other ways to creat
 
 **Setup your database in the following steps:**
 
-1. Create a new folder and name it dependencies. This folder can be in the same location/directory as your Todo App.
+1. Create a new folder and name it **dependencies**. This folder can be in the same directory as your Todo App.
 2. Open a terminal, `cd` into the dependencies folder, create another folder and call it `mongo`.
 3. Inside the `mongo` folder, create a file and name it `docker-compose.yml`.
 4. open the `docker-compose.yml` file in your code editor and paste the code below.
 5. don’t forget to replace the placeholder with your database name on the **-MONGO_INITDB_DATABASE=<db-name>** environment variable.
 
-```docker
+```YAML
 version: '3.8'
 services:
   db:
@@ -216,9 +217,9 @@ volumes:
     driver: local	
 ```
 
-### 4.  Define checkError function
+### 4.  Define `checkError` function
 
-The checkError function is used to check for errors as seen in the init function. For this tutorial we use `log.fatal` to stop the app and log the error to the console. It takes an ( err Error) parameter. when err is not empty, the function will log the error message on the console and terminate immediately.
+The checkError function is used to check for errors, as seen in the init function. For this tutorial, we use `log.fatal` to stop the app and log the error to the console. It takes an `( err Error)` parameter. When `err` is not empty, the function will log the error message on the console and terminate immediately.
 
 Add this code after the init function.
 
@@ -239,7 +240,6 @@ Create `func main()` between `func init()` and `checkerror()`.
 Add the code below to connect to a server.
 
 ```go
-
 func main() {
 	server := &http.Server{
 		Addr:         ":9000",
@@ -257,7 +257,7 @@ func main() {
 }
 ```
 
-In the code above, we created a `server` variable and assign a `&http.Server` with a port number of `“:9000”` and new a chi router handler `chi.NewRouter()`.
+In the code above, we created a `server` variable and assigned a `&http.Server` with a port number of `“:9000”` and a new **chi router** handler `chi.NewRouter()`.
 `ListenAndServe` starts the HTTP server with the port address and router handler.
 At this point, you can build and run `main.go` to see that your server has been started on `port:9000`.
 
@@ -350,9 +350,9 @@ func main() {
 In the code above;
 
 - we define a new chi Router variable `router`.
-- We use `middleware.Logger` from `chi` to log the HTTP URLs Requests in the console.
+- we use `middleware.Logger` from `chi` to log the HTTP URLs Requests in the console.
 - `router.Get` to create a home router and `router.Mount` to create a `todo` sub-router.
-- Mount attaches another **http.Handler** along **./pattern/***
+- `Mount` attaches another **http.Handler** along **./pattern/***
 
 Replace `chi.NewRouter()`  with `router` variable in the `server` definition as shown below.
 
@@ -388,9 +388,9 @@ We are done with the database and server setup. Next, let's define all the Route
 
 ### 9. Define the homeHandler Function
 
-Create a **func Handler** function and place it between `func init` and `func main` in the main.go file.
+Create a **func Handler** function and place it between `func init` and `func main` in the **main.go** file.
 
-Create a **readme** **file** at the root of the project to match the `filePath` variable.
+Create a **readme file** at the root of the project to match the `filePath` variable.
 
 ```go
 func homeHandler(rw http.ResponseWriter, r *http.Request) {
@@ -400,12 +400,12 @@ func homeHandler(rw http.ResponseWriter, r *http.Request) {
 }
 ```
 
-In the code above, we created a handler function called `homeHandler` that displays the content of the [README.md](http://READDME.md) file when a browser HTTP request is made to `"localhost:9000/"`.  This will serve as the home page.
+In the code above, we created a handler function called `homeHandler` that displays the content of the **README.md** file when a browser HTTP request is made to `"localhost:9000/"`.  This will serve as the home page.
 
 A handler in Go is a function that takes 2 signature parameters (http.ResponseWriter, http.Request).
 
-- **http.ResponseWriter** handles the HTTP response to the client. In this example, we are sending a [README.md](http://README.md) text file as a response.
-- **http.Request** handles all incoming requests from the browser to **`"**localhost:9000/**"`.** It ****contains all the information about the HTTP request including the headers and URL.
+- **http.ResponseWriter** handles the HTTP response to the client. In this example, we are sending a **README.md** text file as a response.
+- **http.Request** handles all incoming requests from the browser to **`"**localhost:9000/**"`.It contains all the information about the HTTP request including the headers and URL.
 - **rnd.FileView** renders the readme file.
 - **http.StatusOK** An 200 HTTP status code, indicates that the request was successful.
 - **checkError** will stop the app and log the error if the response failed for any reason.
@@ -422,13 +422,16 @@ This function handles all HTTP Get requests for `"localhost:9000/todo"` It fetch
 func getTodos(rw http.ResponseWriter, r *http.Request) {
 	var todoListFromDB = []TodoModel{}
 	filter := bson.D{}
+
 	cursor, err := db.Collection(collectionName).Find(context.Background(), filter)
+	
 	if err != nil {
 		log.Printf("failed to fetch todo records from the db: %v\n", err.Error())
 		rnd.JSON(rw, http.StatusBadRequest, renderer.M{
 			"message": "Could not fetch the todo collection",
 			"error":   err.Error(),
 		})
+
 		return
 	}
 }
@@ -511,11 +514,13 @@ type (
 
 Create a `func CreateTodo` function handler. Inside the function, create a `todo` variable of type `CreatTodo` to store the user input sent through the request body.
 
-`json.NewDecoder(r.body)Decode(&todo)` decodes the input sent in the request body. If an error occurred and it fails to decode the response body, we return a JSON response with a 400(Bad request)HTTP status code and an error message.
+`json.NewDecoder(r.body)Decode(&todo)` decodes the input sent in the request body. If an error occurrs and it fails to decode the response body, we return a JSON response with a 400(Bad Request) HTTP status code and an error message.
 
 ```go
 func createTodo(rw http.ResponseWriter, r *http.Request) {
+
 	var todoReq CreateTodo
+
 	if err := json.NewDecoder(r.Body).Decode(&todoRequestBody); err != nil {
 		log.Printf("failed to decode json data: %v\n", err.Error())
 		rnd.JSON(rw, http.StatusBadRequest, renderer.M{
@@ -533,7 +538,7 @@ func createTodo(rw http.ResponseWriter, r *http.Request) {
 	}
 ```
 
-After decoding the response body successfully, we check if the `title` field data is an empty string. If true, we return a JSON response with a 400(Bad Request)HTTP status code and an error message indicating the `title` field cannot be empty.
+After decoding the response body successfully, we check if the `title` field data is an empty string. If true, we return a JSON response with a 400(Bad Request) HTTP status code and an error message indicating the `title` field cannot be empty.
 
 Now we have validated the client is sending the correct data in the request body, create a `todoModel` variable of type `TodoModel` and set the **Title field** to `todoRequestBo.Title`. We pass the `todoModel` into the `db.Collection(collectionName).InsertOne(r.Context(), todoModel)` . This inserts the `todoModel` into the database.
 
@@ -604,7 +609,7 @@ func updateTodo(rw http.ResponseWriter, r *http.Request) {
 
 In the code above, we get the ID parameter from the  URL path using `chi.URLParam(r, "id")`. we check if the ID is a valid hex value because the ID in the database is stored as a hex value. Next, we use `primitive.ObjectIDFromHex(id)` to convert the ID from `hex` to `primitive.ObjectID` because that is how the `ID` is stored in the database. `primitive.ObjectIDFromHex(id)` returns two values `res` and `err`. 
 
-If `err` is not empty, log the error to the console, and return a JSON response with a 400(bad request) HTTP status code and an error message.
+If `err` is not empty, log the error to the console, and return a JSON response with a 400 (bad request) HTTP status code and an error message.
 
 If `res` is not empty, the conversion was successful.  Next, we decode the request body and validate that the JSON data sent by the client is valid. 
 
@@ -656,9 +661,9 @@ We create an `update` variable and set the value of the `title` and `completed` 
 
 `db.Collection(collectionName).UpdateOne(r.Context(), filter, update)` will fetch the data with the given **ID** and update the **title** and **completed** fields data.
 
-If an error occurs while executing the update database fields operation, return a JSON response with a 500(bad request) HTTP status code and an error message indicating that the update failed due to a database error.
+If an error occurs while executing the update database fields operation, return a JSON response with a 500 (bad request) HTTP status code and an error message indicating that the update failed due to a database error.
 
-If the update operation is successful, return a JSON response with a 200(OK) HTTP response, a success message and the number of modified documents(in this case 1) to indicate the TODO item has updated successfully.
+If the update operation is successful, return a JSON response with a 200 (OK) HTTP response, a success message and the number of modified documents(in this case 1) to indicate the TODO item has updated successfully.
 
 #### Delete Todo
 
@@ -706,7 +711,7 @@ With this we are done building the REST APIs we need to perform CRUD operations.
 
 Now you can test all the API endpoints created in this tutorial with Postman.
 
-### **Next Steps**
+#### Next Steps
 
 In the upcoming sections, we'll cover:
 
