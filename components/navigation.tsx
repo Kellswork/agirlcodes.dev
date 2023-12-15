@@ -22,7 +22,7 @@ const Navigation = () => {
           </Link>
 
           <div className="font-roboto font-medium  text-base">
-            <NavLink link="/" text="Home" spacing="mr-5" />
+            <NavLink link="/" text="Home"/>
             {/* <NavLink link="/" text="Portfolio" /> */}
           </div>
         </div>
