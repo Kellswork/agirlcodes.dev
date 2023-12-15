@@ -93,8 +93,11 @@ export default function Post({ postData }: Props) {
             <h2 className="text-headlineLarge font-bold mb-4 max-w-[44rem] mx-auto sm:text-headlineSmall">
               {postData.frontMatter.title}
             </h2>
+           
             <article className="">
+            
               <div className="markdown-content max-w-[44rem] mx-auto ">
+              <p className="text-sm font-medium text-purple-7">{postData.frontMatter.fullDate}</p>
                 <Markdown
                   components={{
                     code(props: SyntaxHighlighterProps) {
