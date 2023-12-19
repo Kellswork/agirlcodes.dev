@@ -711,7 +711,7 @@ With this we are done building the REST APIs we need to perform CRUD operations.
 
 Now you can test all the API endpoints created in this tutorial with Postman.
 
-For the complete code, see on [GitHub](https://github.com/Kellswork/golang-todo-app)
+For the complete code, view it on [GitHub](https://github.com/Kellswork/golang-todo-app).
 
 #### Next Steps
 
