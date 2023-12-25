@@ -265,5 +265,5 @@ Do share your most used git command list with me on [medium](https://agirlcodes.
 
 - [4 New ES2021(ES12) Features JavaScript Developers Need to Know'](https://www.agirlcodes.dev/4-new-es2021(es12)-features-javascript-developers-need-to-know).
 
-- [How to check if an object is empty](https://www.agirlcodes.dev/my-most-used-git-commands).
+- [How to check if an object is empty in JavaScript](https://www.agirlcodes.dev/how-to-check-if-an-object-is-empty-in-javascript).
 

@@ -11,7 +11,7 @@ url: '/how-to-check-if-an-object-is-empty-in-javascript'
 
 In this article, I will be sharing 6 different JavaScript methods you can use to check  if an object is empty or not.
 
-Let's start with creating an empty object using literal syntax.
+Let's start with creating an empty object using literal syntax...
 
 ```js
 const myObject = {}
