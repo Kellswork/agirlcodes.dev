@@ -9,6 +9,7 @@ import SyntaxHighlighter, {
 import { atelierCaveLight } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import Markdown from "react-markdown";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 interface Props {
   postData: PostDataProps;
@@ -143,6 +144,7 @@ export default function Post({ postData }: Props) {
         </BaseLayout>
       </main>
       <Analytics />
+      <SpeedInsights/>
     </div>
   );
 }
