@@ -16,7 +16,7 @@ If you want a quick overview of how to build forms with multiple input fields us
 
 ### 1. Build a simple React form with multiple input fields
 
-```jsx
+```javascript
 npx create-react-app contact-info
 
 ```
@@ -26,7 +26,7 @@ Get rid of everything you don't need, here's a link to what my app looks like af
 In the src folder, create a file `src/components/ContactForm.jsx`, this component  contains the code to build the form.
 
 
-```jsx
+```javascript
 
 export default function UserForm() {
 
@@ -105,7 +105,7 @@ Create a  `contact` state with the form input names as the properties.
 Add `value` property to each input field and set the value to contact state properties as illustrated below.
 
 
-```jsx
+```javascript
 
 import { useState } from "react";
 
@@ -169,7 +169,7 @@ we are setting the `value` in the input fields to the `contact` state properties
 
 Let's add a  `handleChange` function to take care of updating the input fields. Add this  below `contact` state. 
 
-```jsx
+```javascript
 const handleChange = (event) => {
     setContactInfo({ ...contactInfo, [event.target.name]: event.target.value });
   };
@@ -193,7 +193,7 @@ Navigate to `ContactInfo` and add the `handleSubmit` function.
 
 Pass the `handleSubmit` function to an `onSubmit event listener` in the `<form>` tag. When the submit button is clicked, the user data is logged to the console.
 
-```jsx
+```javascript
 const handleSubmit = (event) => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
@@ -210,7 +210,7 @@ const handleSubmit = (event) => {
 
  Last, let's clear the input field when the submit button is clicked, set the `contactInfo` state variable to an empty string. Update `handleSubmit` function like so
 
-```jsx
+```javascript
 const handleSubmit = (event) => {
     event.preventDefault();
     console.log(contactInfo);
@@ -232,7 +232,7 @@ Create an `addContact` function that takes `contactInfo` as a parameter for upda
 
 pass `addContact` function as `props` to the `ContactForm.jsx` component. This is also an example of passing data from parent to child component.
 
-```jsx
+```javascript
 import { useState } from "react";
 import ContactForm from "./components/ContactForm.jsx";
 import "./App.css";
@@ -258,7 +258,7 @@ export default App;
 
 Using object [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) in javascript, get `addContact` from props, Update the `handleSubmit` function so instead of logging the data to the console, pass it as a parameter to the addContact function.
 
-```jsx
+```javascript
 import { useState } from "react";
 
 export default function UserForm({addContact}) {
@@ -284,7 +284,7 @@ create a `ContactList` file in `src/components` and export a simple `<div>` tag 
 
 Import `ContactList` file into `App.js` and pass `contacts` data as props to `contactList` component
 
-```jsx
+```javascript
 import { useState } from "react";
 import ContactForm from "./components/ContactForm.jsx";
 import ContactList from "./components/ContactList.jsx";
@@ -316,7 +316,7 @@ Due to `contacts` data being an array, we need a way to display each `contact` d
 
 the `<p>` tag is used to display `name`, `email` and `phone number` of each contact object
 
-```jsx
+```javascript
 
 export default function UserList({contacts}) {
   return (

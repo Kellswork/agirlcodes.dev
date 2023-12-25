@@ -33,7 +33,7 @@ All we need to create a simple API is to create a pages/api folder in our next J
 
 We can now begin by creating a fresh NextJs application by running the following command.
 
-```js
+```javascript
 npx create-next-app@latest
 ```
 
@@ -43,7 +43,7 @@ It's best practice to store environment variables in `.env` files, do not push y
 **Local Setup**
 
 Create a `.env.local` file. file in the root folder of your next js application. Place your environment variables in that file:
-```js
+```javascript
 MAILCHIMP_API_KEY="your-mailchimp-api-key"
 MAILCHIMP_AUDIENCE_ID="your-mailchimp-audience-id"
 MAILCHIMP_API_SERVER="your-api-server-prefix"
@@ -61,7 +61,7 @@ I have my blog app deployed on Netlify.
 
 Create `pages/api/subscribe.js` and paste the following code inside it: 
 
-```jsx
+```javascript
 import axios from 'axios'
 
 export default async (req, res) => {
@@ -105,7 +105,7 @@ export default async (req, res) => {
 ```
 [Axios](https://www.npmjs.com/package/axios) provides a simple and clean way for us to make API requests. We are importing it inside the `subscribe.js` file because we will use it to make a post request to the [Mailchimp marketing API](https://mailchimp.com/developer/marketing/api/list-members/add-member-to-list/). Be sure to install it using the following command:
 
-```js
+```javascript
 npx install axios
 ```
 
@@ -131,7 +131,7 @@ To add additional params, [see the full list of available params](https://mailch
 
 Create a `Subscribe.js` file in `src/components` folder with the following code:
 
-```jsx
+```javascript
 
 function Subscribe() {
 
@@ -213,7 +213,7 @@ Based on the response we get, the state is either set to `Success` for a success
 
 While waiting for the server response, the state is set to `Loading`, the button is set to `disabled`. I did this to prevent users from clicking the button again and as a way to let them know their request is processing.
 
-```jsx
+```javascript
 
 {
   state === 'Error' && (

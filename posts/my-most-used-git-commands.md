@@ -27,7 +27,7 @@ First I will list out my most used git commands, then a small list of the git co
 
 I use **git status command** to check how many files have been changed and have not been committed.
 
-```
+```bash
 git status
 ```
 
@@ -60,7 +60,7 @@ Another way to check if files have been committed is by typing **git status** in
 
 The third part of the git add command is where we specify the files we want to add. So “--all” and “.” means all files. We could also specify which files want to add by doing: 
 
-```
+```bash
 git add dir/file1.js dir/file2.js
 ```
 ![git-add](/posts-images/git-commands/git-add.png)
@@ -74,7 +74,7 @@ This command can be used in a short format.
 
 This option lets you commit your work with a short / one line message
 
-```
+```bash
 git commit -m 'update article with pictures'
 ```
 
@@ -93,7 +93,7 @@ This is the same as the command above, but it opens up a vim editor where you ca
 
 I use the **git push command** to send locally committed changes to the GitHub remote branch. This ensures that the branch on the remote repository contains all the updates made on the local branch.
 
-```
+```bash
 git push
 ```
 
@@ -101,28 +101,28 @@ git push
 
 For a newly created local branch, this command is used to set up a remote branch with the same name as the local branch.
 
-```
-git push -u origin <branch_name>
+```bash
+git push -u origin <branch_name> 
 ```
 or the default by git
 
-```
-git push --set-upstream <remote> <branch_name>
+```bash
+git push --set-upstream <remote> <branch_name> 
 ```
 
 ### Git Pull
 
 I use the **git pull command** to keep my git local repositories content up-to-date with what is currently in the remote repository.
 
-```
+```bash
 git pull
 ```
 ### Git checkout
 
 I use this to switch branches.
 
-```
-git checkout <branch name>
+```bash
+git checkout <branch name> 
 ```
 
 ![git-checkout](/posts-images/git-commands/git-checkout.png)
@@ -130,8 +130,8 @@ git checkout <branch name>
 #### Git checkout -b
 
 This creates a new branch from an existing branch and  automatically switches to the new branch.
-```
-git checkout -b <branch name>
+```bash
+git checkout -b <branch name> 
 ```
 ![git-checkout-b](/posts-images/git-commands/git-checkout-b.png)
 
@@ -145,9 +145,9 @@ If I want my `feature branch` to have the same updates as the `main branch`, I u
 
 make sure you checkout to the `main branch`  and run the **git merge** command.
 
-```
+```bash
 git checkout main
-git merge <branch name>
+git merge <branch name> 
 ```
 
 ![git-merge-main](/posts-images/git-commands/git-merge-main.png)
@@ -159,14 +159,14 @@ git merge <branch name>
 
 Make sure the `local main` is up to date with the `remote main branch`.
 
-```
+```bash
 git pull
 ```
 checkout to the `feature branch` and run the git merge command.
 
-```
-git checkout <feature-branch>
-git merge <branch name>
+```bash
+git checkout <feature-branch> 
+git merge <branch name> 
 ```
 
 ![git-merge-feature](/posts-images/git-commands/git-merge-feature.png)
@@ -185,7 +185,7 @@ These commands I frequently use but not as much as my most used commands.
 
 This displays your git commit history as a one-line short message, making scanning through previous commit messages easy.
 
-```
+```bash
 git log --oneline
 ```
 ![git-log-online](/posts-images/git-commands/git-log-oneline.png)
@@ -194,7 +194,7 @@ git log --oneline
 
 I use this command to delete local branches I no longer need.
 
-```
+```bash
 git branch -d
 ```
 ![git-delete](/posts-images/git-commands/git-delete.png)
@@ -204,8 +204,8 @@ git branch -d
 
 I use this command when I want to undo a commit to a certain commit in a file. You can use **git --oneline** to get the short version of the commit hash you want the code to reset to.
 
-```
-git reset head <commit hash>
+```bash
+git reset head <commit hash> 
 ```
 
 ## Notable mentions from Developer friends of their most used git commands
@@ -222,7 +222,7 @@ These are some of the commands I found from Dev friends that are different from 
 
 **git rm --cached** command remove files from your local git repository. The **--cached flag** deletes the file from your git repository, it becomes an untracked file in your project folder. Note you have to commit the changes.
 
-```
+```bash 
 git rm <file Relative path> --cached
 ```
 
@@ -233,7 +233,7 @@ git rm <file Relative path> --cached
 Say you are working on a `feature branch` and you need to work on something else but don’t want to commit the changes just yet.
 You use a **git stash** command to save the changes temporarily without having to commit them. This lets you switch between branches and back to your  `feature branch`, easily retrieve the stashed changes and continue working on it.
 
-```
+```bash
 git stash --include-untracked or git stash -u
 ```
 
@@ -244,7 +244,7 @@ git stash --include-untracked or git stash -u
 You use this command when you want to get a single commit from another branch into your working branch. Think of it like this, instead of using **git merge**
  to add all the commits from another branch into your working branch just to get one particular commit from that branch, you use git **cherry pick<commit hash>** to merge that particular commit into your branch.
 
-```
+```bash
 git cherrypick 0c2e231
 ```
 

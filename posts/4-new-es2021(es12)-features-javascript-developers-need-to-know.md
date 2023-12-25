@@ -16,7 +16,7 @@ This feature combines mathematical assignment operators with the most often used
 
 #### Logical OR Assignment  ( || = )
 
-```jsx
+```javascript
 let person = {name: 'Mary' , job:'specialist', sex: '' }
 
 person.name ||= 'user'
@@ -43,7 +43,7 @@ person.sex = person.sex || 'not specified'
 
 #### Logical AND Assignment  ( && = )
 
-```jsx
+```javascript
 let person = {name: 'Mary' , job:'specialist', sex: 'female' }
 
 const changeJob =() => 'hustler';
@@ -64,7 +64,7 @@ If the first operand is *truthy*, `changeJob()` is called. Else if it's *falsey*
 
 #### Logical Nullish Assignment  ( ?? = )
 
-```jsx
+```javascript
 let person = {name: 'Mary' , job:'specialist', sex: 'female' }
 
 person.sex ??= 'not specified'
@@ -88,9 +88,9 @@ In this case `person.location` == `null` and was assigned `lagos` value.
 
 This feature helps large numbers in javascript become easier to read and understand.
 
-it uses underscore( _ ) to improve readability both in integers and floating points (numbers in JS are floats).
+it uses underscore( _ ) to improve readability both in integers and floating points (numbers in avascript are floats).
 
-```js
+```javascript
 //before
 1000000  // squints eye, counts Zeros carefully
 
@@ -108,7 +108,7 @@ let price = 23_000  // $23,000
 
 **Promise.any()** accept an array of `Promise` objects and returns the first promise object to be fulfilled or resolved.
 
-```js
+```javascript
 const promise1 = new Promise((resolve) => setTimeout(() => resolve('number 1'), 30)
 const promise2 = new Promise((resolve) => setTimeout(() => resolve('number 2'), 20)
 const promise3 = new Promise((resolve) => setTimeout(() => resolve('number 3'), 10)
@@ -134,7 +134,7 @@ The `replaceAll()` method gives developers a straightforward way of replacing a 
 Unlike the `String.replace()` method that replaces the only first substring it finds in the string. 
 
 
-```js
+```javascript
 let str = 'music is life, music feeds the soul';
 
 str.replaceAll('music', 'food');
@@ -148,7 +148,7 @@ console.log(str); // 'food is life, food feeds the soul'
 To get started using ES2021 features in your code, set up your project with Babel compiler, the packages have already been included in `@babel/preset-env`
 
 
-> [A link to setting up a Babel in your project](https://babeljs.io/setup#installation)
+> [A link to setting up a Babel in your project](https://babelavascript.io/setup#installation)
 
 Discuss on [Medium](https://agirlcodes.medium.com/4-new-es2021-es12-features-javascript-developers-need-to-know-54964dc1a49d)
 

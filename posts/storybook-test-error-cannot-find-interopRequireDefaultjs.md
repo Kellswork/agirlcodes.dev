@@ -26,7 +26,7 @@ Next, after some more research, I tried installing  `@babel/runtime` as a depend
 
 Deleting the Jest cache directory. I added this command to my package.json and ran it.
 
-```js
+```javascript
 
 "test": "react-scripts test --clearcache"
 

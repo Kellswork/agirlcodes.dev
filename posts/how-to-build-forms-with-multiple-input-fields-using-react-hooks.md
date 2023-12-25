@@ -24,7 +24,7 @@ for more information on controlled Input → [check here](https://reactjs.org/do
 
 In most scenarios, we will be needing more than one input field from users. To demonstrate this, let's create a registration form.
 
-```jsx
+```javascript
 import React, { useState } from "react";
 
 export default function Register() {
@@ -54,11 +54,11 @@ let's start from the top
 
 *state* → here we are declaring the state using *useState hook*, user represents the object we inserted into *useState*, *setUser* is going to be used to update the state. if you are to familiar with  React classes
 
-```jsx
+```javascript
  const [user, setUser] = useState({ fullname: "", email: "", password: "" });
 ```
 
-```jsx
+```javascript
 
 this.state = {
   user: {

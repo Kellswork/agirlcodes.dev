@@ -21,14 +21,14 @@ Manually writing code that converts a date string to a Javascript Date object ca
 
 install **Luxon** 
 
-```jsx
+```javascript
 npm install Luxon
 ```
 
 Import it into the component file that renders your blog post list.
 
 `/components/postList/postList.js`
-```jsx
+```javascript
 import { dateTime } from 'Luxon'
 ```
 
@@ -61,7 +61,7 @@ Now that the date string has been converted to a Javascript Date object, use the
 In the src folder, go to the component displaying your blog post list, create a variable `sortBlogPostsByDatesort` and assign the sort function code to the variable
 
 `/components/postLists/postLists.js`
-```jsx
+```javascript
 const sortBlogPostsByDate = posts.sort((a, b) => {
     const beforeDate = DateTime.fromFormat(a.frontmatter.date, 'm-d-yyyy')
     const afterDate = DateTime.fromFormat(b.frontmatter.date, 'm-d-yyyy')
@@ -74,7 +74,7 @@ The new Array data `sortBlogPostsByDate` contains the sorted blog posts with the
 Finally using a javascript map function, loop through the sorted post data to display the blog posts list on the dom.
 
 `/components/postLists/postLists.js`
-```jsx
+```javascript
 return (
     <div className="postlist">
       {posts &&

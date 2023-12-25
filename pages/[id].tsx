@@ -6,11 +6,12 @@ import BaseLayout from "../components/baseLayout";
 import SyntaxHighlighter, {
   SyntaxHighlighterProps,
 } from "react-syntax-highlighter";
-import { atelierCaveLight } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { paraisoDark, shadesOfPurple, qtcreatorDark, srcery} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import Markdown from "react-markdown";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+// i like srcry for Golang
 interface Props {
   postData: PostDataProps;
 }
@@ -111,7 +112,7 @@ export default function Post({ postData }: Props) {
                           {...rest}
                           pretag="div"
                           language={match[1]}
-                          style={atelierCaveLight}
+                          style={shadesOfPurple}
                           showLineNumbers
                           customStyle={{
                             borderRadius: "4px",

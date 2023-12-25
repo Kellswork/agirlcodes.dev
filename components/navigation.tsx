@@ -1,6 +1,5 @@
 import React from "react";
 import BaseLayout from "./baseLayout";
-import Head from "next/head";
 import Link from "next/link";
 
 const NavLink = ({ text, link, spacing }: { text: string; link: string, spacing?: string }) => (
