@@ -2,6 +2,14 @@ User-agent: *
 Allow: /
 
 Disallow: /api/*
+Disallow: /components/ContactForm.jsx
+Disallow: /README.md
+Disallow: /{id}
+Disallow: /[postname]
+Disallow: /components/ContactList.jsx
+Disallow: /storybook-test-error-cannot-find-interoprequiredefaultjs
+
+
 
 Sitemap: https://www.agirlcodes.dev/sitemap.xml
 
