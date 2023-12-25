@@ -34,7 +34,7 @@ export const BlogPostlistCard = ({
       className="inline-block relative after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-purple-5 after:bottom-0 after:left-0 after:origin-bottom-left after:transition-transform after:ease-out after:duration-200 hover:after:scale-x-100 :hover:after:origin-bottom-right hover:opacity-80 text-sm font-medium text-purple-4"
       href={`/${url}`}
     >
-      Learn more
+      Read More
     </Link>
   </div>
 );
