@@ -4,7 +4,7 @@ date: 29-12-2023
 fullDate: Friday, 29 December 2023
 tags: Go
 image: /posts-images/html-templates-static-assets/golang-setup-html-templates-and-static-assets.jpg
-description: "This guide will focus on generating HTML templates, serving static CSS and Javascript files using Golang, setting up the Fronted app and connecting it to the backend. We are using Go to create a simple web server service that will serve HTML, CSS and JavaScript files when you navigate to a localhost http address."
+description: "This guide will focus on generating HTML templates, serving static CSS and Javascript files using Golang, setting up the Fronted app and connecting it to the backend. We are using Go to create a simple web server service that will serve HTML, CSS and JavaScript files when you navigate to a localhost address."
 url: '/golang-setup-html-templates-and-static-assets'
 ---
 
