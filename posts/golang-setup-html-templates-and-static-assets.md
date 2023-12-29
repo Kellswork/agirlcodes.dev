@@ -16,9 +16,7 @@ This guide will focus on generating HTML templates, serving static CSS and Javas
 
 As we've finished building the backend application, it's time to set up the front end, connect it to the backend, and create a full-stack web application.
 
-This article lays the foundation for the upcoming one, where we will build a Todo Frontend App with the Fetch API and Vanilla JavaScript (with a TypeScript version available)(add links)January 8, 2024 .
-
-Update this article with the link for the fronted after you’ve published
+This article lays the foundation for the upcoming one, where we will build a Todo Frontend App with the Fetch API and Vanilla JavaScript (with a TypeScript version available).
 
 This Todo App has monolith architecture, indicating the Frontend and Backend share the same codebase.
 
@@ -34,7 +32,7 @@ The [renderer](https://github.com/thedevsaddam/renderer) package , which we use 
 
 The HTML template contains code for a task input box and a submit button. The div with id "todos" is used to add todos retrieved from the backend API and display them dynamically in the todos div on the Frontend.
 
-![input-box.png](/posts-images/html-templates-static-assets/html-template-go-input.jpg)
+![input-box.jpg](/posts-images/html-templates-static-assets/html-template-go-input.jpg)
 
 
 To add the HTML template,
@@ -78,9 +76,7 @@ To add the HTML template,
 {{end}}
 ```
 
-In the code above,
-
-We define an HTML template named” **indexPage”**, which we will serve as the Response when a user navigates to our homepage.
+In the code above, we define an HTML template named” **indexPage”**, which we will serve as the Response when a user navigates to our homepage.
 
 We linked the CSS file to the index page, ensuring the HTML templates applied the styles correctly.
 
@@ -90,8 +86,8 @@ To add the CSS file;
 
 1. Create a Static folder in the root directory. You can name this folder “public” or “assets” if you want.
 2. Inside the folder, create “**style.css**” file.
-3. Copy and paste the following code into the "style.css" file or you can download the file from [GitHub](https://github.com/Kellswork/golang-todo-app/tree/feat/setup-html-template-and-asset-files/static). (link to file on GitHub).
-4. Link the css file to “index.html” file. make sure you have added the css link to the `<head>` tag in the index.html file
+3. Copy and paste the following code into the "style.css" file, or you can download the file from [GitHub](https://github.com/Kellswork/golang-todo-app/tree/feat/setup-html-template-and-asset-files/static). (link to file on GitHub).
+4. Link the css file to “**index.html**” file. Make sure you have added the css link to the `<head>` tag in the index.html file
 
 ```html
 <head>
@@ -100,9 +96,7 @@ To add the CSS file;
 </head>
 ```
 
-**Note:** Do not copy the JS file. We will build the Frontend app in another article. ( could remove in the future)
-
-this is a basic styling i crated for the Todo app frontend layout. feel free to use this or the stylesd of your choice.
+This is a basic styling I created for the Todo app frontend layout. Feel free to use this or the styles of your choice.
 
 `static/style.css`
 
@@ -225,7 +219,7 @@ You can check the code on GitHub for reference
 
 #### Parse HTML template
 
-Now we have the HJTML and CSS files setup, let’s get Go to display them. In your `main.go` file, update the `renderer` method in `func init`   by adding the HTML parsing option to  `rnd = renderer.New()` .
+Now we have the HJTML and CSS files set up, let’s get Golang to display them. In your `main.go` file, update the `renderer` method in `func init`   by adding the HTML parsing option to  `rnd = renderer.New()` .
 
 ```go
 func init() {
@@ -256,13 +250,13 @@ Here, I commented out the `README.md` file that was being returned and replaced 
 
 Run `go run main.go` to view the result.
 
-**Note**: If you used my Go Todo Backend API tutorial, make sure to have your database up and running, otherwise the app will crash.
+> **Note**: If you used my Go Todo Backend API tutorial, make sure to have your database up and running, otherwise the app will crash.
 
 ## Serve Static CSS and JavaScript Files in Go.
 
 After running `main.go` and navigating to `localhost:9000`. You notice that the HTML lacks CSS, and the URL returns a 404 error for the static files.
 
-![html-templates-static-assets/static-asseets-404.jpg](posts-images/html-templates-static-assets/static-asseets-404.jpg)
+![html-templates-static-assets/static-asseets-404.jpg](posts-images/html-templates-static-assets/static-asset-404.jpg)
 
 To fix this error, we must serve the static files to `Go` by publishing the `CSS`  files. 
 
@@ -284,10 +278,10 @@ The `http.StripPrefix` removes the `‘static’` prefix from the request URL, s
 
 Once you complete the setup,  run `go run main.go` and navigate to `localhost:9000` in your web browser. You will see that the page has applied the styles, and the URL will return a `200 status ok` for the CSS and script file( if you added one ), indicating that the server has successfully served the static files.
 
-![html-templates-static-assets/static-asseets-200.jpg](posts-images/html-templates-static-assets/static-asseets-200.jpg)
+![html-templates-static-assets/static-asset-200.jpg](posts-images/html-templates-static-assets/static-asset-200.jpg)
 
 
- **JavaScript File**
+**JavaScript File**
 
 Adding a JavaScript file is no different from adding a CSS file. The process is exactly the same. Simply create a `script.js` file inside the `static` folder (or whichever folder name you used). After restarting the server, the JavaScript file will be picked up and served, just like the CSS file.css file.
 
@@ -361,9 +355,9 @@ To test, add a simple code to the `script.ts` file (e.g. `console.log(’hello�
 
 Now, you're all set to write and compile TypeScript code. 
 
-Get the complete code for HTML template setup and asset files on [GitHub](https://github.com/Kellswork/golang-todo-app/tree/feat/setup-html-template-and-asset-files). 
+> Get the complete code for HTML template setup and asset files on [GitHub](https://github.com/Kellswork/golang-todo-app/tree/feat/setup-html-template-and-asset-files). 
 
-For TypeScript configuration, check out the file on [GitHub](https://github.com/Kellswork/golang-todo-app/tree/feat/add-typescript-configuration). 
+> For TypeScript configuration, check out the file on [GitHub](https://github.com/Kellswork/golang-todo-app/tree/feat/add-typescript-configuration). 
 
 Note the codes are on different branches, and I have provided the links to the branches on GitHub.
 
