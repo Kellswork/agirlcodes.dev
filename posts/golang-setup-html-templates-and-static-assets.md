@@ -4,7 +4,7 @@ date: 29-12-2023
 fullDate: Friday, 29 December 2023
 tags: Go
 image: /posts-images/html-templates-static-assets/golang-setup-html-templates-and-static-assets.jpg
-description: "This guide will focus on generating HTML templates, serving static CSS and Javascript files using Golang, setting up the Fronted app and connecting it to the backend. We are using Go to create a simple web server service that will serve HTML, CSS and JavaScript files when you navigate to a localhost address."
+description: "This guide focuses on generating HTML templates, serving static CSS and Javascript files in Go, setting up the Fronted app and connecting it to the backend. We are using Go to create a simple web server service that will serve HTML, CSS and JavaScript files when you navigate to a localhost address."
 url: '/golang-setup-html-templates-and-static-assets'
 ---
 
@@ -12,7 +12,7 @@ This article is a continuation of the previous one, where we built a simple Todo
 
 If you are new to Go and would like an easy way to get your feet wet, check out my article on building a Simple Todo CRUD REST API with Go and MongoDB.
 
-This guide will focus on generating HTML templates, serving static CSS and Javascript files using Golang, setting up the Fronted app and connecting it to the backend.
+This guide focuses on generating HTML templates, serving static CSS and Javascript files in Go, setting up the Fronted app and connecting it to the backend.
 
 As we've finished building the backend application, it's time to set up the front end, connect it to the backend, and create a full-stack web application.
 
@@ -359,7 +359,6 @@ Now, you're all set to write and compile TypeScript code.
 
 > For TypeScript configuration, check out the file on [GitHub](https://github.com/Kellswork/golang-todo-app/tree/feat/add-typescript-configuration). 
 
-Note the codes are on different branches, and I have provided the links to the branches on GitHub.
 
 ### Conclusion
 
