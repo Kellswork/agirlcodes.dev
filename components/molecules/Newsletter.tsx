@@ -4,40 +4,35 @@ import { Mail } from "./svg";
 import { Button } from "./button";
 import axios from "axios";
 
-
-// https://medium.com/@dilarauluturhan/form-validation-for-frontend-developer-6320b0a05792
-
-
 const Newsletter = () => {
   const [email, setEmail] = useState<string>("");
   const [status, setStatus] = useState<
     "success" | "error" | "loading" | "idle"
   >("idle");
-  const [errorMsg, setErrorMsg] = useState<string>(null);
+  const [responseMsg, setResponseMsg] = useState<string>(null);
   const [statusCode, setStatusCode] = useState<number>();
-  // const [responseStatus, setResponseStatus] = useState<number>(null);
 
   async function handleSubscribe(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("loading");
-
-
     try {
-      
       const response = await axios.post("/api/subscribe", { email });
-      console.log(response);
-
       setStatus("success");
-      // setResponseStatus(e.response.status);
+      setStatusCode(response.status);
       setEmail("");
+      setResponseMsg(response.data.message);
     } catch (e) {
-      console.log(e.response.data.error);
-      // setResponseStatus(e.response.status);
       setStatus("error");
+      setStatusCode(e.response.status);
+      setResponseMsg(e.response.data.error);
     }
-  }
 
- 
+    setTimeout(() => {
+      setEmail("");
+      setStatus("idle");
+      setStatusCode(null);
+    }, 3000);
+  }
 
   return (
     <div className="newsletter-card max-w-lg ft:max-w-full px-8 py-4 rounded bg-white">
@@ -52,7 +47,9 @@ const Newsletter = () => {
       </p>
       <form
         onSubmit={handleSubscribe}
-        className={`flex transition ease-out delay-75 focus-within:border-2 focus-within:border-purple-7 items-center h-14 pr-0.5 border rounded`}
+        className={`flex transition ease-out delay-75 focus-within:border-2 focus-within:border-purple-7 items-center h-14 pr-0.5 border rounded ${
+          statusCode == 400 ? "border-orange-500" : ""
+        }`}
       >
         <input
           type="text"
@@ -77,12 +74,10 @@ const Newsletter = () => {
       </form>
       <div className="server-message pt-4 text-green-600">
         {status === "success" && (
-          <p className="text-green-600">
-            Awesome! You have successfully subscribed!
-          </p>
+          <p className="text-green-600">{responseMsg}</p>
         )}
         {status === "error" ? (
-          <p className="text-orange-600">{errorMsg}</p>
+          <p className="text-orange-600">{responseMsg}</p>
         ) : null}
       </div>
     </div>
@@ -90,4 +85,3 @@ const Newsletter = () => {
 };
 
 export default Newsletter;
-

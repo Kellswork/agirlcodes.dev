@@ -21,7 +21,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/api/subscribe.ts"  ],
   "exclude": [
     "node_modules"
   ]
