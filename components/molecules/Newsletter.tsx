@@ -31,7 +31,7 @@ const Newsletter = () => {
       setEmail("");
       setStatus("idle");
       setStatusCode(null);
-    }, 3000);
+    }, 4000);
   }
 
   return (
