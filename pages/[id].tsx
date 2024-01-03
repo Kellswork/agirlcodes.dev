@@ -10,6 +10,7 @@ import { paraisoDark, shadesOfPurple, qtcreatorDark, srcery} from "react-syntax-
 import Markdown from "react-markdown";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Footer from "../components/footer";
 
 // i like srcry for Golang
 interface Props {
@@ -146,7 +147,9 @@ export default function Post({ postData }: Props) {
       </main>
       <Analytics />
       <SpeedInsights/>
+      <Footer/>
     </div>
+    
   );
 }
 

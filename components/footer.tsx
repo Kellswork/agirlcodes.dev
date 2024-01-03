@@ -40,7 +40,7 @@ const Footer = () => (
       </div>
     </BaseLayout>
     <Divider />
-    <BaseLayout spacing="py-10">
+    <BaseLayout spacing="py-10 text-center">
       <p className="pb-4">
         Articles written by Kelechi Ogbonna. All rights reserved
       </p>
