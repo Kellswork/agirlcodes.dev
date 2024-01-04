@@ -33,7 +33,7 @@ interface ButtonProps{
   url?: string;
   disabled?: boolean
   onclick?: (e) => Promise<void>
-  type: "button" | "submit" | "reset"
+  type?: "button" | "submit" | "reset"
 }
 
 export const Button = ({width, height, textColor, borderRadius, text, bgColor, activeColor, url, disabled, onclick, type}: ButtonProps) => (

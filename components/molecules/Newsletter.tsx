@@ -17,6 +17,7 @@ const Newsletter = () => {
     setStatus("loading");
     try {
       const response = await axios.post("/api/subscribe", { email });
+
       setStatus("success");
       setStatusCode(response.status);
       setEmail("");
