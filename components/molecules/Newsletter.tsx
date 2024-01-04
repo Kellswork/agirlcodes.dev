@@ -32,7 +32,7 @@ const Newsletter = () => {
       setEmail("");
       setStatus("idle");
       setStatusCode(null);
-    }, 4000);
+    }, 10000);
   }
 
   return (
