@@ -2,14 +2,14 @@ import { FormEvent, useState } from "react";
 import { TitleAndSvg } from "./helpers";
 import { Mail } from "./svg";
 import { Button } from "./button";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const Newsletter = () => {
   const [email, setEmail] = useState<string>("");
   const [status, setStatus] = useState<
     "success" | "error" | "loading" | "idle"
   >("idle");
-  const [responseMsg, setResponseMsg] = useState<string>(null);
+  const [responseMsg, setResponseMsg] = useState<string>('');
   const [statusCode, setStatusCode] = useState<number>();
 
   async function handleSubscribe(e: FormEvent<HTMLFormElement>) {
@@ -22,16 +22,20 @@ const Newsletter = () => {
       setStatusCode(response.status);
       setEmail("");
       setResponseMsg(response.data.message);
-    } catch (e) {
-      setStatus("error");
-      setStatusCode(e.response.status);
-      setResponseMsg(e.response.data.error);
+    } catch (err ) {
+      if(axios.isAxiosError(err)){
+
+        setStatus("error");
+        setStatusCode(err.response?.status);
+        setResponseMsg(err.response?.data.error);
+      }
+     
     }
 
     setTimeout(() => {
       setEmail("");
       setStatus("idle");
-      setStatusCode(null);
+      setStatusCode(0);
     }, 10000);
   }
 
@@ -53,9 +57,9 @@ const Newsletter = () => {
         }`}
       >
         <input
-          type="text"
+          type="email"
           placeholder="What is your email address?"
-          className="grow mx-4 focus:outline-none disabled:bg-transparent"
+          className="grow mx-4 caret-purple-7 focus:outline-none disabled:bg-transparent"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status == "loading"}

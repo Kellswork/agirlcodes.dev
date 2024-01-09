@@ -7,7 +7,7 @@ import profilepic from "../../public/images/profile.jpg";
 
 interface CardProps {
   title?: string;
-  tags?: string | string[];
+  tags: string | string[];
   date?: string;
   fullDate?: string;
   description?: string;

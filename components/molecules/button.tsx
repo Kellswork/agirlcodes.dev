@@ -32,13 +32,12 @@ interface ButtonProps{
   activeColor: string;
   url?: string;
   disabled?: boolean
-  onclick?: (e) => Promise<void>
   type?: "button" | "submit" | "reset"
 }
 
-export const Button = ({width, height, textColor, borderRadius, text, bgColor, activeColor, url, disabled, onclick, type}: ButtonProps) => (
+export const Button = ({width, height, textColor, borderRadius, text, bgColor, activeColor, url, disabled, type}: ButtonProps) => (
   <a href={url || ''} target="blank">
-  <button onClick={onclick} disabled={disabled}  className={` ${width || '' } ${borderRadius || ''} inline-flex text-sm items-center ${height || 'h-10'} font-medium ${bgColor} px-5 py-2.5 justify-center ${textColor}  hover:shadow hover:opacity-80 active:${activeColor} transition ease-in-out disabled:bg-slate-400 `} type={type}>
+  <button disabled={disabled}  className={` ${width || '' } ${borderRadius || ''} inline-flex text-sm items-center ${height || 'h-10'} font-medium ${bgColor} px-5 py-2.5 justify-center ${textColor}  hover:shadow hover:opacity-80 active:${activeColor} transition ease-in-out disabled:bg-slate-400 `} type={type}>
     {text} 
   </button>
   </a>
