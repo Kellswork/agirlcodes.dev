@@ -16,7 +16,7 @@ const BlogPostList = ({posts}:{posts: PostDataProps[]}) => {
     return afterDate - beforeDate
   });
 
-  const formatDate = (date) => DateTime.fromFormat(date, 'd-m-yyyy').setLocale('en-GB').toLocaleString(DateTime.DATE_FULL);;
+  // const formatDate = (date) => DateTime.fromFormat(date, 'd-m-yyyy').setLocale('en-GB').toLocaleString(DateTime.DATE_FULL);;
 
   return (
     <>
