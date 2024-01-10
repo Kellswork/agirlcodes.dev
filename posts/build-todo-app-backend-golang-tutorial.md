@@ -57,8 +57,6 @@ The `go.mod` file shows a list of all the packages downloaded.
 ```go
 go get "github.com/go-chi/chi/v5"
 
-go get "github.com/go-chi/chi/v5/middleware"
-
 go get "github.com/thedevsaddam/renderer"
 
 go get go.mongodb.org/mongo-driver/mongo
@@ -713,20 +711,25 @@ Now you can test all the API endpoints created in this tutorial with Postman.
 
 For the complete code, view it on [GitHub](https://github.com/Kellswork/golang-todo-app).
 
-#### Next Steps
+### **Next Steps**
 
 In the upcoming sections, we'll cover:
 
-- Writing Go tests for the Todo backend.
-- Connecting a Todo Frontend to the Todo backend APIs.
+- Connecting a Todo Frontend to the Todo Backend: [Learn how to set up HTML Templates and Static Assets in Golang](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets)
 - Building the Todo Frontend with Fetch API and Vanilla JavaScript(TypeScript version too )
+- Writing Go tests for the Todo backend.
 - Testing API endpoints using Postman.
 
 ### Conclusion
 
-In this tutorial, you've learned to create a new Go application project, set up and connect to a server, gracefully shut down the server, and create a Home API endpoint along with CRUD Todo API endpoints. With a functional backend in place, you can now test all API endpoints using Postman. If you're unfamiliar with this process, keep an eye out for my upcoming article on testing API endpoints with Postman.
+In this tutorial, you've learned to set up a Go application, connect to a server, gracefully shut down the server, and create a Home API endpoint along with CRUD Todo API endpoints. With a functional backend, you can test all API endpoints using Postman. If you need to familiarize yourself with this process, watch for my upcoming article on testing API endpoints with Postman.
 
-As for the Frontend, I'm planning to release a guide on how to build the Todo Frontend App. However, if you're not interested in that, I'll provide a section that explains and show you how to add the HTML, CSS, and JavaScript files, containing the code for the Frontend Todo App. I will also show how to update the main.go file to replace the README file rendered on the home page to the frontend app. Connecting the Backend to the Frontend. 
+As for the front end, I have an upcoming guide on how to build a Todo App with Fetch API and Vanilla JavaScript. The TypeScript version will also be available. Before starting that, check out my recent article on [connecting the frontend with the backend using HTML templates and static files ( CSS and JavaScript or TypeScript)](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets). It covers how to add and host static files on your Golang server. However, if you're not interested, I can provide you with a link to download the HTML, CSS, and JavaScript code so you can test the Todo backend API endpoints with the frontend UI instead of Postman.
 
+I also plan on publishing an article detailing how to write Golang tests for the backend APIs. If you want these tutorials sent to you, subscribe to my newsletter, and you will get them once they are published.
 
 I hope you found this helpful ❤️.
+
+*Recommended Reads*
+
+[Setup HTML Templates and Static Assets in Golang](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets).

@@ -8,9 +8,7 @@ description: "This guide focuses on generating HTML templates, serving static CS
 url: '/golang-setup-html-templates-and-static-assets'
 ---
 
-This article is a continuation of the previous one, where we built a simple Todo App backend with Golang.
-
-If you are new to Go and would like an easy way to get your feet wet, check out my article on building a Simple Todo CRUD REST API with Go and MongoDB.
+This article is a continuation of the previous one, where we built a [simple Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).
 
 This guide focuses on generating HTML templates, serving static CSS and Javascript files in Go, setting up the Fronted app and connecting it to the backend.
 
@@ -365,3 +363,7 @@ Now, you're all set to write and compile TypeScript code.
 In this continuation article, we learned how to generate HTML templates and serve static CSS and JavaScript files using Golang; we set up a Typescript configuration for people who would prefer to use it. Following the steps outlined in this guide, we can now render HTML templates, parse them, and serve static files.
 
 With this basic setup, we are ready to build the Todo App Frontend with HTML, CSS, and Vanilla JavaScript or TypeScript, using the JavaScript Fetch API to consume the Todo backend API endpoints.
+
+*Recommended Reads*
+
+[simple Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).

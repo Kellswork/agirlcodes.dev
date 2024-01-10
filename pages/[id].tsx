@@ -93,7 +93,7 @@ export default function Post({ postData }: Props) {
       <main>
         <Navigation />
         <BaseLayout>
-          <div className=" font-roboto mt-10">
+          <div className=" font-roboto my-10">
             <h2 className="text-headlineLarge font-bold mb-4 max-w-[44rem] mx-auto sm:text-headlineSmall">
               {postData.frontMatter.title}
             </h2>
@@ -105,7 +105,7 @@ export default function Post({ postData }: Props) {
                 </p>
                 <Markdown
                   components={{
-                    code(props: SyntaxHighlighterProps) {
+                    code(props: any) {
                       const { children, className, node, ...rest } = props;
                       const match = /language-(\w+)/.exec(className || "");
                       return match ? (
