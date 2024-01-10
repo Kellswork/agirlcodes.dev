@@ -2,7 +2,7 @@ import { FormEvent, useState } from "react";
 import { TitleAndSvg } from "./helpers";
 import { Mail } from "./svg";
 import { Button } from "./button";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const Newsletter = () => {
   const [email, setEmail] = useState<string>("");
