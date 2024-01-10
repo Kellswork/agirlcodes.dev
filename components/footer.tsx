@@ -4,7 +4,7 @@ import { GitHub, Globe, Gmail, LinkedIn, Mail } from "./molecules/svg";
 
 import Divider from "./molecules/divider";
 import { TextAndSvg, TitleAndSvg } from "./molecules/helpers";
-import Newsletter from "./molecules/newsletter";
+import Newsletter from "./molecules/Newsletter";
 // TODO: Remove the `hidden` class from newslwtter when you are ready to // implement it. take the chance to update the article too.
 
 const Footer = () => (
