@@ -51,7 +51,7 @@ h6 {
   content: "`";
 }
 
-.markdown-content p a {
+.markdown-content p a, .markdown-content li a {
   text-decoration: underline;
   text-decoration-color: #7dd3fc;
   color: #0ea5e9;
@@ -73,9 +73,9 @@ h6 {
 }
 ul {
   list-style: disc;
-  padding-left: 20px;
+  padding-left: 16px;
 }
 ol {
   list-style: decimal;
-  padding-left: 20px;
+  padding-left: 16px;
 }
