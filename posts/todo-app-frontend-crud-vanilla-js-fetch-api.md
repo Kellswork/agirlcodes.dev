@@ -1,9 +1,9 @@
 ---
-title: 'Build CRUD Todo App Frontend with Vanilla JavaScript and Fetch API'
+title: 'Build a CRUD Todo App with Vanilla JavaScript and Fetch API'
 date: 11-01-2024
 fullDate: Thursaday, 10 January 2024
 tags: JavaScript
-image:
+image:'/posts-images/crud-fetch-api-frontend/todo-app-frontend-crud-vanilla-js-fetch-api.jpg'
 description: "This article will focus on building the frontend portion of a Todo App using Vanilla JavaScript and Fetch API. It's perfect for anyone interested in performing CRUD operations using Vanilla JavaScript and Fetch API"
 url: '/todo-app-frontend-crud-vanilla-js-fetch-api'
 ---
