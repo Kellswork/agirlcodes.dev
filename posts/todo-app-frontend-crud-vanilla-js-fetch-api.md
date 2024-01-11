@@ -35,21 +35,21 @@ For instructions on setting up HTML templates and static assets (CSS, TypeScript
 
 We will write the JavaScript code inside the `script` tag in the HTML template. However, you can write yours in a separate `script.js` file and import it into the HTML file if that works better for you.
 
-If you are new to coding, I’d advice you follow the instructions and type out the code yourself.
+If you are new to coding, I'd advise you to follow the instructions and type the code yourself.
 
 **HTML and CSS Boilerplate**
 
-You can download the HTML and CSS files from this GitHub [repository](https://github.com/Kellswork/golang-todo-app/tree/feat/setup-html-template-and-asset-files), If you wish to use these files’ content.
+You can download the HTML and CSS files from this [GitHub repository](https://github.com/Kellswork/golang-todo-app/tree/feat/setup-html-template-and-asset-files), If you wish to use these files’ content.
 
 ### **Building the Frontend CRUD Functionality**
 
-Note: `localhost:9000/todo` is from the local server we created in the Todo Golang Backend in previous [article](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial). Feel free to work with any API endpoint of your choice.
+Note: `localhost:9000/todo` is from the local server we created in the Todo Golang Backend in the previous [article](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial). Feel free to work with any API endpoint of your choice.
 
 ### Get and Display a list of todo items
 
 **Make a Get Request with the Fetch API**
 
-To make a GET request to the API endpoint, we create a function called `getTodos()`. This function is responsible for making the HTTP GET request to `localhost:9000/todo` and fetching a list of all the todos from the specified API endpoint.
+To make a GET request to the API endpoint, we create a `getTodos()` function. This function is responsible for making the HTTP GET request to `localhost:9000/todo` and fetching a list of all the todos from the specified API endpoint.
 
 `/html/index.html`
 
@@ -70,7 +70,7 @@ To make a GET request to the API endpoint, we create a function called `getTodos
 </script>
 ```
 
-In the code above, we save the API endpoint in a string called `localhostAddress` so that it can be easily reused. 
+In the code above, we save the API endpoint in a string called `localhostAddress` so it can be easily reused. 
 
 The `getTodos()` function uses the Fetch API to send the request, await the response, and then parses the response data as JSON. We return the data object in the `responseData` variable because that is the server response data object we need.
 
@@ -128,7 +128,7 @@ We use the `document.querySelector` method to find the HTML element with ID `tod
 
 Next, we check if the **todoList** is empty. If it is, we will update `todoListContainer.innerHTML` with a message informing the user that there are no tasks created yet.
 
-If the **todoList** is not empty, we loop through the todoList to access each todo item. For each todo item, we generate an HTML structure that includes the **todo title** and **action buttons** for **editing** and **deleting** a todo. 
+If the **todoList** is not empty, we loop through the todoList to access each todo item.We generate an HTML structure for each todo item including the **todo title** and **action buttons** for **editing** and **deleting** a todo.  
 
 We call the `displayTodos()` function to ensure that the list is displayed when the App loads. Depending on what is returned from your server, the DOM will update the screen with the HTML Todo structure list accordingly.
 
@@ -174,9 +174,9 @@ async function displayTodos() {
 
 In the code above, we defined a function called `createTodo`. It uses the javascript fetch API to send a post request to the `localhostaddress`.
 
-The createTodo function takes a data argument which is which is sent as part of the request body and converts it to a JSON string. 
+The `createTodo` function takes a data argument which is which is sent as part of the request body and converts it to a JSON string. 
 
-We set the content type of the request header to "application/json" to indicate that the response body object will be in JSON format. 
+We set the content type of the request header to "**application/json**" to indicate that the response body object will be in JSON format. 
 
 To prevent the app from crashing due to an error, the code is wrapped in a try-catch block. If the response is successful, a success message is logged to the console.
 
@@ -192,9 +192,9 @@ let submitButton = document.querySelector("#submit");
 
 We use the query selector to get the input element and save it in a constant called "**newtodoinput**". Similarly, we save the submit button in a constant called "**submitButton**".
 
-Next, we will define asynchronous function called `addTasks` that will be responsible for adding a new task to the user interface when the user clicks the submit button.
+Next, we will define an asynchronous function called `addTasks` that will be responsible for adding a new task to the user interface when the user clicks the submit button.
 
-Add the following code below the createTodo function.
+Add the following code below the `createTodo` function.
 
 ```javascript
 async function createTodo() {
@@ -220,11 +220,11 @@ submitButton.addEventListener("click", () => addTask());
 
 When a user clicks the submit button, the `addtask` function is called because we attached a click event listener to the submit button.
 
-Inside the function, we create a data object with a `title` key, and set its value to the user's input value.
+Inside the function, we create a data object with a `title` key and set its value to the user's input value.
 
 We then call the `createTodo` function and pass the data object as a parameter to send a POST request to the server, sending the new task data to the backend.
 
-We await the result, and call `displayTodos` to refresh the DOM and display the newly created todo task if the request was successful. Finally, we clear the input field by setting `newtodoinput.value` to an empty string.
+We await the result and call `displayTodos` to refresh the DOM and display the newly created todo task if the request was successful. Finally, we clear the input field by setting `newtodoinput.value` to an empty string.
 
 **Remember** to only access `newtodoinput.value` when you want to use it. Avoid adding `.value` at the end of the `newtodoinput` constant, as it will result in an empty input value.
 
@@ -235,7 +235,7 @@ Lastly, attach an event listener to the `submitButton` to call the `addTasks` fu
 
 **Update `displayTodo` function to fix duplication on the DOM**
 
-If you try adding a Task you will notice the values are duplicated on the DOM.
+If you try adding a Task, you will notice the values are duplicated on the DOM.
 
 To avoid duplicated values on the DOM when adding a task, clear the todoListContainer element before populating it with new data. To do this, add `todoListContainer.innerHTML = "";` to the **displayTodos()** function.
 
@@ -302,7 +302,7 @@ The **deleteTodo** function takes in a parameter **TodoID**, which is the ID of 
 
 To catch any errors that occur and log them gracefully to the console, we place this function call in a **try-catch** block.
 
-We use the **fetch** API to send an HTTP DELETE request to **localhostAdress** with the ID in the URL. We then **await** the response from the request and parse it as JSON. 
+We use the **Fetch API** to send an HTTP DELETE request to **localhostAdress** with the ID in the URL. We then **await** the response from the request and parse it as JSON. 
 
 If the request was successful, we console log the success message returned from the server. In this case, we do not return the result because we don’t need it.
 
@@ -315,7 +315,6 @@ As a quick recap, When we created the **todoContainer.innerHTML** to display the
 To add functionality to the delete button action,  we define a `deleteTaskButton` function below `displayTodos()` function. 
 
 ```javascript
-
 function deleteTaskButton() {
   const deleteTodoButtons = document.querySelectorAll(".delete");
 
@@ -334,7 +333,7 @@ Inside the function, we use the **queryselectorAll** to select all the elements 
 
 **When a user clicks the delete icon button:**
 
-We create a constant **todoID** that we will use to to access the ID for each todo item. To get the **TodoID**, we update the button element with a **data-id** attribute.
+We create a constant **todoID** that we will use to access the ID for each todo item. To get the **TodoID**, we update the button element with a **data-id** attribute.
 
 If you check the code snippet below, you will see I updated the button element with class ’**delete**’ to show how to add the data-id attribute. 
 
@@ -346,11 +345,11 @@ async function displayTodos() {
 }
 ```
 
-Next, we assign the `todo.id` as the `data-id` attribute value. which is one of the properties of a **todo** in the `**todolist`**.
+Next, we assign the `todo.id` as the `data-id` attribute value. which is one of the properties of a **todo** in the `**todolist**`.
 
 To get the **`todo.id`** saved in the **`data-id`** attribute, we use the `getAttribute` method and store the value in a **`todoID`**.
 
-Next, we call the **deleteTodo** function and pass in the **todoID** as a parameter to delete the item, and then await the result. After the item is deleted, we refresh the todo list to show the updated list.
+Next, we call the **deleteTodo** function and pass in the **todoID** as a parameter to delete the item and await the result. After the item is deleted, we refresh the todo list to show the updated list.
 
 Finally, we call the `deleteTaskButton()` function inside `displayTodos()` so that it is available to `displayTodos` when a user clicks the delete button.
 
@@ -374,7 +373,7 @@ To update a To-do item, we will be implementing two forms of editing.
 1. users will be able to edit the To-do item title.
 2. users will be able to mark a To-do item as completed or not.
 
-**users will be able to edit the To-do item title.**
+#### Users will be able to edit the To-do item title.
 
 To edit the To-do item title, we will start by defining an asynchronous function that will make an API call to update the To-do item in the database. This function will take a TodoID and the data object to be passed as the parameters and part of the request body.
 
@@ -408,7 +407,7 @@ async function addTask() {
 
 After creating the `updateTodo` async function for updating a To-do Item HTTP Request,  When a user clicks the edit button, we want to load the To-do item title into the input box. To achieve this, we need to create a variable to track whether the user is currently editing a To-do item or not. This is necessary because we are using the same input box for both editing and adding new items to the list.
 
-At the beginning of the file where you defined your variable, create `'isEditingTask'` and set it to `fals`ee. Also create an `editButtonTodoID` variable, we will use it to store the id of the todo we want to edit.
+At the beginning of the file where you defined your variable, create `isEditingTask` and set it to `false`. Also create an `editButtonTodoID` variable, we will use it to store the id of the todo we want to edit.
 
 ```javascript
 const submitButton = document.querySelector("#submit");
@@ -417,9 +416,9 @@ let isEditingTask = false;
 let editButtonTodoID = '';
 ```
 
- Next, navigate to the `displayTodos` function and add the data-id attribute to  `<button class=edit>`. Also add a `editTaskTitleButton` below `deleteTaskButton` in the displayTodos function.
+ Next, navigate to the `displayTodos` function and add the data-id attribute to  `<button class=edit>`. Also, add a `editTaskTitleButton` below `deleteTaskButton` in the displayTodos function.
 
-```jsx
+```javascript
 async function displayTodos() {
   <button data-id=${todo.id} class="edit">
   // code that lists the todo...
@@ -429,7 +428,7 @@ async function displayTodos() {
 }
 ```
 
-Now, we let’s define a `editTaskTitleButton` function. Place this code below `deletTaskButton()`
+Now, let’s define a `editTaskTitleButton` function. Place this code below `deletTaskButton()`
 
 ```javascript
 function deleteTaskButton() {
@@ -455,16 +454,16 @@ function editTaskTitleButton() {
 
 In the code above, we use the  `document.querySelectorAll` to fetch all the button elements with `class='edit'`. we save the NodeList element in a variable called `editTodoTitleButtons`. Next, we loop through the list to access the to-do button.
 
-To access the todo item title, we can use the `editButton.parentNode.parentNode.children[0]` code. This code moves up the DOM hierarchy, allowing us to select the first child element of the second parent. We store this element in the `todoName` variable, which gives us access to the inner text representing the todo item title.
+To access the todo item title, we can use the `editButton.parentNode.parentNode.children[0]` code. This code moves up the DOM hierarchy, allowing us to select the first child element of the second parent. We store this element in the `todoName` variable, giving us access to the inner text representing the title of the todo item.
 
-Now that we can access to the todo item title in the DOM, we want to load the text into the input box. To do that, we attach an `onclick` event listener to the “**edit”** button so when a user clicks on the edit button, we:
+Now that we can access the todo item title in the DOM, we want to load the text into the input box. To do that, we attach an `onclick` event listener to the “**edit”** button so when a user clicks on the edit button, we:
 
 - we set the input box value to the todo item title text
 - change the submit  button text to `edit` (this is optional)
 - set `isEditingTask` variable to true
-- get the todo ID from the `data-id` attribute and save it the `editButtonTodoID` variable we defined at the top.
+- get the todo ID from the `data-id` attribute and save it in the `editButtonTodoID` variable we defined at the top.
 
-Your app should be able able to load a todo title into the input box when you click on it now.
+Your app should be able to load a todo title into the input box when you click on it now.
 
 <video class='video-container' src="/posts-images/crud-fetch-api-frontend/edit-button-load-title.mp4" width="640" height="auto" controls></video>
 
@@ -491,9 +490,9 @@ async function displayTodos() {
 }
 ```
 
-In the code above, we create a data object with the title and completed property. The title is set to the `newTodoInput.value`, which is whatever is in the input box when the user clicks the submit button. We set `completed` to false for now because the API is expecting a completed property to be present; later, we will update the value for the `completed` prop accordingly.
+In the code above, we create a data object with the title and completed property. The title is set to `newTodoInput.value`, which is whatever is in the input box when the user clicks the submit button. We set `completed` to false for now because the API expects a completed property to be present; later, we will update the value for the `completed` prop accordingly.
 
-Next, we check to see if `isEditingTask` is true  which means the user is editing a task, remember we set `isEditingTask` to `true` when a user clicks the edit button. We call the `updateTodo` function and pass in the `TodoID` and data object as arguments. We `await` the result and refresh the to-do item list when done. Next, clear the input field and set `isEditingTask` to false to indicate we are done. Finally, update the submit button text back to "**Add**".
+Next, we check to see if `isEditingTask` is true, which means the user is editing a task, remember we set `isEditingTask` to `true` when a user clicks the edit button. We call the `updateTodo` function and pass in the `TodoID` and data object as arguments. We `await` the result and refresh the to-do item list when done. Next, clear the input field and set `isEditingTask` to false to indicate we are done. Finally, update the submit button text back to "**Add**".
 
 Lastly, update the submit button event listener to call `editTask` function if `isEditingTask` is true.
 
@@ -505,7 +504,7 @@ To view changes, restart the Go server if using one.
 
 <video class='video-container' src="/posts-images/crud-fetch-api-frontend/edit-todo-title-text.mp4" width="640" height="auto" controls></video>
 
-**users will be able to mark a To-do item as completed.**
+#### Users will be able to mark a To-do item as completed.
 
 To implement this functionality, the process involves two main steps:
 
@@ -538,7 +537,7 @@ In the code above:
 
 We also add two custom attributes, **`data-iscomplete`** and **`data-id`**, to store the **`completed`** status and the ID for each todo item. These attributes will help us access and update the values later.
 
-We also added an HTML id attribute to make it easy for us to fetch the list of all the to-do titles displayed on the DOM.
+We also added an HTML id attribute to make it easy to fetch the list of all the to-do titles displayed on the DOM.
 
 **Toggle Todo Item as Completed or Not**
 
@@ -546,7 +545,7 @@ Next, we want to allow users to click on a todo item to toggle its completion st
 
 Also call the `toggleTaskCompletion` inside the `dislayTodos` function like we did for `deleteTaskButton` and `editTaskTiltleButton` 
 
-```jsx
+```javascript
 async function displayTodos() {
   <button data-id=${todo.id} class="edit">
   // code that lists the todo...
@@ -675,7 +674,7 @@ Stay tuned for an upcoming TypeScript version of this tutorial.
 
 This guide covers key frontend development skills, including API interaction, CRUD operations, and dynamic user interface creation. Building a Todo app is an ideal starting point for web development, offering insights and skills for broader applications. 
 
-I Hope you found this article helpful ❤️
+I hope you found this article helpful ❤️
 
 Please feel free to contact me via email at kells@agirlcodes.dev or drop a comment if you have any questions or feedback or need help with any part of the tutorial.
 
