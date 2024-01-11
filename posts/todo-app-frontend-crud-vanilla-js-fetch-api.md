@@ -658,6 +658,9 @@ With these changes, your code effectively handles marking todo items as done and
 
 <video class='video-container' src="/posts-images/crud-fetch-api-frontend/edit-title-and-mark-todo.mp4" width="640" height="auto" controls></video
 
+> View the complete code on [GitHub](https://github.com/Kellswork/golang-todo-app/tree/feat/frontend-with-vanilla-js)
+
+
 ### Conclusion
 
 In this tutorial, we've built a Todo app's frontend using Vanilla JavaScript and the Fetch API. We've covered all the CRUD operations:
@@ -672,6 +675,10 @@ Stay tuned for an upcoming TypeScript version of this tutorial.
 
 This guide covers key frontend development skills, including API interaction, CRUD operations, and dynamic user interface creation. Building a Todo app is an ideal starting point for web development, offering insights and skills for broader applications. 
 
-Hope you found this article helpful ❤️
+I Hope you found this article helpful ❤️
 
 Please feel free to contact me via email at kells@agirlcodes.dev or drop a comment if you have any questions or feedback or need help with any part of the tutorial.
+
+*Recommended Reads*
+- [Build a Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).
+- [Setup HTML Templates and Static Assets in Golang](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets).

@@ -724,7 +724,7 @@ In the upcoming sections, we'll cover:
 
 In this tutorial, you've learned to set up a Go application, connect to a server, gracefully shut down the server, and create a Home API endpoint along with CRUD Todo API endpoints. With a functional backend, you can test all API endpoints using Postman. If you need to familiarize yourself with this process, watch for my upcoming article on testing API endpoints with Postman.
 
-As for the front end, I have an upcoming guide on how to build a Todo App with Fetch API and Vanilla JavaScript. The TypeScript version will also be available. Before starting that, check out my recent article on [connecting the frontend with the backend using HTML templates and static files ( CSS and JavaScript or TypeScript)](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets). It covers how to add and host static files on your Golang server. However, if you're not interested, I can provide you with a link to download the HTML, CSS, and JavaScript code so you can test the Todo backend API endpoints with the frontend UI instead of Postman.
+As for the front end, I have published a guide on [how to build a CRUD Todo App with Fetch API and Vanilla JavaScript](https://www.agirlcodes.dev/todo-app-frontend-crud-vanilla-js-fetch-api). The TypeScript version will be availabl next week. Before starting that, check out my recent article on [connecting the frontend with the backend using HTML templates and static files ( CSS and JavaScript or TypeScript)](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets). It covers how to add and host static files on your Golang server. However, if you're not interested, I can provide you with a link to download the HTML, CSS, and JavaScript code so you can test the Todo backend API endpoints with the frontend UI instead of Postman.
 
 I also plan on publishing an article detailing how to write Golang tests for the backend APIs. If you want these tutorials sent to you, subscribe to my newsletter, and you will get them once they are published.
 
@@ -732,4 +732,5 @@ I hope you found this helpful ❤️.
 
 *Recommended Reads*
 
-[Setup HTML Templates and Static Assets in Golang](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets).
+- [Setup HTML Templates and Static Assets in Golang](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets).
+- [Build a CRUD Todo App with Vanilla JavaScript and Fetch API](https://www.agirlcodes.dev/todo-app-frontend-crud-vanilla-js-fetch-api).

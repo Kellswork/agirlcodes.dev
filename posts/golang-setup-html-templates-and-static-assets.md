@@ -366,4 +366,6 @@ With this basic setup, we are ready to build the Todo App Frontend with HTML, CS
 
 *Recommended Reads*
 
-[simple Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).
+- [Build a Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).
+- [Build a CRUD Todo App with Vanilla JavaScript and Fetch API](https://www.agirlcodes.dev/todo-app-frontend-crud-vanilla-js-fetch-api).
+
