@@ -79,3 +79,7 @@ ol {
   list-style: decimal;
   padding-left: 16px;
 }
+
+.video-container {
+  padding-bottom : 32px;
+}

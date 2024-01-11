@@ -11,6 +11,7 @@ import Markdown from "react-markdown";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "../components/footer";
+import rehypeRaw from "rehype-raw";
 
 // i like srcry for Golang
 interface Props {
@@ -104,6 +105,7 @@ export default function Post({ postData }: Props) {
                   Published on {postData.frontMatter.fullDate}
                 </p>
                 <Markdown
+                rehypePlugins={[rehypeRaw] as any}
                   components={{
                     code(props: any) {
                       const { children, className, node, ...rest } = props;
