@@ -24,6 +24,7 @@ Regardless of the technology you choose, the core concepts remain the same, and 
 
 This post is perfect for anyone interested in performing CRUD operations using Vanilla JavaScript and Fetch API, even without setting up a Go server. We will use HTML, CSS, TypeScript, and JavaScript for the front-end development.
 
+You can find the **TypeScript version** of this article [here](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).
 
 ### What we will be building
 
@@ -41,9 +42,9 @@ If you are new to coding, I'd advise you to follow the instructions and type the
 
 You can download the HTML and CSS files from this [GitHub repository](https://github.com/Kellswork/golang-todo-app/tree/feat/setup-html-template-and-asset-files), If you wish to use these files’ content.
 
-### **Building the Frontend CRUD Functionality**
+### Building the Frontend CRUD Functionality
 
-Note: `localhost:9000/todo` is from the local server we created in the Todo Golang Backend in the previous [article](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial). Feel free to work with any API endpoint of your choice.
+> Note: `localhost:9000/todo` is from the local server we created in the Todo Golang Backend in the previous [article](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial). Feel free to work with any API endpoint of your choice.
 
 ### Get and Display a list of todo items
 
@@ -180,7 +181,7 @@ We set the content type of the request header to "**application/json**" to indic
 
 To prevent the app from crashing due to an error, the code is wrapped in a try-catch block. If the response is successful, a success message is logged to the console.
 
-**Create  Todos From the User Interface**
+**Create Todos From the User Interface**
 
 To allow users to add a new task from the app's user interface, we have an input box and a submit button.
 
@@ -370,8 +371,8 @@ To view changes, compile the file `tsc static/script.ts` and restart the Go serv
 
 To update a To-do item, we will be implementing two forms of editing.
 
-1. users will be able to edit the To-do item title.
-2. users will be able to mark a To-do item as completed or not.
+1. Users will be able to edit the To-do item title.
+2. Users will be able to mark a To-do item as completed or not.
 
 #### Users will be able to edit the To-do item title.
 
@@ -674,9 +675,8 @@ Stay tuned for an upcoming TypeScript version of this tutorial.
 
 This guide covers key frontend development skills, including API interaction, CRUD operations, and dynamic user interface creation. Building a Todo app is an ideal starting point for web development, offering insights and skills for broader applications. 
 
+Please feel free to email me or drop a comment if you have any questions, feedback, or need help with any part of the tutorial.
 I hope you found this article helpful ❤️
-
-Please feel free to contact me via email at kells@agirlcodes.dev or drop a comment if you have any questions or feedback or need help with any part of the tutorial.
 
 *Recommended Reads*
 - [Build a Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).

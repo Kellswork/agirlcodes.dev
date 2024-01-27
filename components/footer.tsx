@@ -27,8 +27,8 @@ const Footer = () => (
               svg={<LinkedIn />}
             />
 
-            <TextAndSvg text="Gmail" url="" svg={<Gmail />} />
-
+            <TextAndSvg text="Gmail" url="mailto: kells@agirlcodes.dev" svg={<Gmail />} />
+          
             <TextAndSvg
               text="GitHub"
               url="https://github.com/Kellswork"
