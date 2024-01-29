@@ -53,7 +53,7 @@ You can download the HTML and CSS files from this GitHub repository, If you wish
 
 To make a GET request to the API endpoint, we create a function called `getTodos()`. This function is responsible for making the HTTP GET request to `localhost:9000/todo` and fetching a list of all the todos from the specified API endpoint.
 
-```tsx
+```typescript
 const localhostAddress = "http://localhost:9000/todo";
 
 async function getTodos() {
@@ -92,7 +92,7 @@ One of TypeScript's core benefits is type-checking, which focuses on ensuring th
 
 Let's define two interfaces, `Todo` and `ResponseData`, at the top of the `static/script.ts` file.
 
-```tsx
+```typescript
 interface Todo {
   id: string;
   title: string;
@@ -202,7 +202,7 @@ The line `**todoList.forEach((todo) => {**` is causing a TypeScript error. This 
 
 To resolve this issue, we need to add a check. If `todoList` returns an error `string` type, we can log the error to the console.
 
-```tsx
+```typescript
 async function displayTodos() {
   const todoList = await getTodos();
 
@@ -296,7 +296,7 @@ Let's create a `CreateTodo` Interface to define the API's returned data structur
 
 Add this code at the top where you have the other interfaces defined.
 
-```tsx
+```typescript
 interface Todo {
  ...
 }
@@ -320,7 +320,7 @@ Assign the `createTodoResponse` to the result variable. Now, when we console.log
 
 To allow users to add a new task from the app's user interface, we have an input box and a submit button.
 
-```tsx
+```typescript
 const localhostAddress = "http://localhost:9000/todo";
 
 const newTodoInput = document.querySelector("#new-todo input") as HTMLInputElement;
@@ -561,7 +561,7 @@ let editButtonTodoID = "";
 
  Next, navigate to the `displayTodos` function and add the data-id attribute to  `<button class=edit>`. Also, add a `editTaskTitleButton` below `deleteTaskButton`.
 
-```tsx
+```typescript
 async function displayTodos() {
   <button data-id=${todo.id} class="edit">
   // code that lists the todo...
@@ -593,7 +593,7 @@ function editTaskTitleButton() {
 }
 ```
 
-The highlighted code indicates the part with type assertions.
+Notice part of the code has been updated with type assertions.
 
 In the code above, we use the `document.querySelectorAll` to fetch all the button elements with `class='edit'` . We save the NodeList element in a variable called `editTodoButtons` and set the `editTodoTitleButtons` variable type to `HTMLButtonElement[]`. Check `deleteTodo` for a detailed explanation of why.  Next, we loop through the list to access the to-do button.
 
