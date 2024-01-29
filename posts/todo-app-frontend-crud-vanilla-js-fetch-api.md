@@ -681,3 +681,4 @@ I hope you found this article helpful ❤️
 *Recommended Reads*
 - [Build a Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).
 - [Setup HTML Templates and Static Assets in Golang](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets).
+- [Build a CRUD Todo App with TypeScript and Fetch API](https://www.agirlcodes.dev/todo-app-frontend-crud-typescript-fetch-api)

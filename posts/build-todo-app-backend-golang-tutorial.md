@@ -17,7 +17,7 @@ It is beginner-friendly, and I explain the function of each line of code so you 
 
 ## Prerequisite
 
-You don’t need to know Golang, but I advise you to go through  [A Tour of Go](https://go.dev/tour/list) to understand how **variables**, **loops** and **if statements** work.
+You don’t need to know Golang, but I advise you to go through [A Tour of Go](https://go.dev/tour/list) to understand how **variables**, **loops** and **if statements** work.
 
 To follow along,
 
@@ -50,7 +50,7 @@ The `main.go` file will serve as the entry point to the project. In this project
 
 #### Download the packages we need
 
-To download packages, open the project folder in a terminal and run the commands one after the other. 
+To download packages, open the project folder in a terminal and run the commands one after the other.
 
 The `go.mod` file shows a list of all the packages downloaded.
 
@@ -105,7 +105,7 @@ Note that when you save, **Go** editor will delete unused imports. So these impo
 
 #### Create variables to store values
 
-Create a pointer variable `rnd` of type `render.Render`, `client` of type `mongo.Client` and `db` of type `mongo.Database`. Also, define const variables to store the database name and collection name. 
+Create a pointer variable `rnd` of type `render.Render`, `client` of type `mongo.Client` and `db` of type `mongo.Database`. Also, define const variables to store the database name and collection name.
 
 ```go
 var rnd *renderer.Render
@@ -208,14 +208,14 @@ services:
       - MONGO_INITDB_DATABASE=<db-name>
     ports:
       - 27017:27017
-    volumes: 
+    volumes:
       - $PWD/data/db:/data/db
 volumes:
   db:
-    driver: local	
+    driver: local
 ```
 
-### 4.  Define `checkError` function
+### 4. Define `checkError` function
 
 The checkError function is used to check for errors, as seen in the init function. For this tutorial, we use `log.fatal` to stop the app and log the error to the console. It takes an `( err Error)` parameter. When `err` is not empty, the function will log the error message on the console and terminate immediately.
 
@@ -231,9 +231,9 @@ func checkError(err error) {
 
 ### 5. Create and Connect to a Go Server
 
-Go has an HTTP package that provides HTTP client and server implementations. 
+Go has an HTTP package that provides HTTP client and server implementations.
 
-Create `func main()` between `func init()` and `checkerror()`. 
+Create `func main()` between `func init()` and `checkerror()`.
 
 Add the code below to connect to a server.
 
@@ -350,9 +350,9 @@ In the code above;
 - we define a new chi Router variable `router`.
 - we use `middleware.Logger` from `chi` to log the HTTP URLs Requests in the console.
 - `router.Get` to create a home router and `router.Mount` to create a `todo` sub-router.
-- `Mount` attaches another **http.Handler** along **./pattern/***
+- `Mount` attaches another **http.Handler** along **./pattern/**
 
-Replace `chi.NewRouter()`  with `router` variable in the `server` definition as shown below.
+Replace `chi.NewRouter()` with `router` variable in the `server` definition as shown below.
 
 ```go
 server := &http.Server{
@@ -398,7 +398,7 @@ func homeHandler(rw http.ResponseWriter, r *http.Request) {
 }
 ```
 
-In the code above, we created a handler function called `homeHandler` that displays the content of the **README.md** file when a browser HTTP request is made to `"localhost:9000/"`.  This will serve as the home page.
+In the code above, we created a handler function called `homeHandler` that displays the content of the **README.md** file when a browser HTTP request is made to `"localhost:9000/"`. This will serve as the home page.
 
 A handler in Go is a function that takes 2 signature parameters (http.ResponseWriter, http.Request).
 
@@ -422,7 +422,7 @@ func getTodos(rw http.ResponseWriter, r *http.Request) {
 	filter := bson.D{}
 
 	cursor, err := db.Collection(collectionName).Find(context.Background(), filter)
-	
+
 	if err != nil {
 		log.Printf("failed to fetch todo records from the db: %v\n", err.Error())
 		rnd.JSON(rw, http.StatusBadRequest, renderer.M{
@@ -435,17 +435,15 @@ func getTodos(rw http.ResponseWriter, r *http.Request) {
 }
 ```
 
-
 > 💡 import "[go.mongodb.org/mongo-driver/bson](http://go.mongodb.org/mongo-driver/bson)" for the **undefined: bson** error.
-
 
 In the code above, we declare a variable `todoListFromDB` as an empty list and of type **TodoModel**.
 
-Next, we create a `filter` variable without any conditions, this way all data in a collection will be sent back. 
+Next, we create a `filter` variable without any conditions, this way all data in a collection will be sent back.
 
-`db.Collection(collectionName).Find(context.Background(), filter)` executes a database query to retrieve the TODO entries based on the provided filter. The retrieved data is stored in the `cursor` variable. If an error occurred while retrieving the TODO entries, we return a JSON response object with the error message. 
+`db.Collection(collectionName).Find(context.Background(), filter)` executes a database query to retrieve the TODO entries based on the provided filter. The retrieved data is stored in the `cursor` variable. If an error occurred while retrieving the TODO entries, we return a JSON response object with the error message.
 
-After retrieving the data successfully from the database, We declare another variable `todoList`  and assign an empty list with type `Todo`. `todoList` is created to convert and store TODO entries fetched from the DB from `bson` to `JSON` format.
+After retrieving the data successfully from the database, We declare another variable `todoList` and assign an empty list with type `Todo`. `todoList` is created to convert and store TODO entries fetched from the DB from `bson` to `JSON` format.
 
 ```go
 	func getTodos(rw http.ResponseWriter, r *http.Request) {
@@ -473,11 +471,11 @@ After retrieving the data successfully from the database, We declare another var
 }
 ```
 
-In the code above, the `todoListFromDB` is iterated over using a **for loop** with the blank identifier since we don't need the index value. The loop converts each `TodoModel type` TODO entry in `todoListFromDB` to a `Todo` type and appends the converted TODO entry  to the `todoList`.
+In the code above, the `todoListFromDB` is iterated over using a **for loop** with the blank identifier since we don't need the index value. The loop converts each `TodoModel type` TODO entry in `todoListFromDB` to a `Todo` type and appends the converted TODO entry to the `todoList`.
 
 I have created a custom type called `GetTodoResponse` to precisely define the structure of the JSON response data returned.
 
-To add this custom type renderer, update  `type` to include the `GetTodoResponse` struct type. 
+To add this custom type renderer, update `type` to include the `GetTodoResponse` struct type.
 
 Creating a JSON response struct type provides a structured way to organise the data that will be sent as a JSON response from the server.
 
@@ -496,9 +494,9 @@ If the get request is successful, we return a JSON response with a message and t
 
 #### Create(POST) Todo
 
-This function handles all HTTP POST requests for `"localhost:9000/todo"` . It processes the client’s input and creates and stores a new TODO entry  in the database. 
+This function handles all HTTP POST requests for `"localhost:9000/todo"` . It processes the client’s input and creates and stores a new TODO entry in the database.
 
-Let’s create a custom struct type `CreateTodo` for the request body. The only field the user fills is the `Title` field. update  `type`  to include `createTodo` struct.
+Let’s create a custom struct type `CreateTodo` for the request body. The only field the user fills is the `Title` field. update `type` to include `createTodo` struct.
 
 ```go
 type (
@@ -587,7 +585,7 @@ UpdateTodo struct {
 )
 ```
 
-Create a `func updateTodo` handler. 
+Create a `func updateTodo` handler.
 
 ```go
 func updateTodo(rw http.ResponseWriter, r *http.Request) {
@@ -605,11 +603,11 @@ func updateTodo(rw http.ResponseWriter, r *http.Request) {
 	}
 ```
 
-In the code above, we get the ID parameter from the  URL path using `chi.URLParam(r, "id")`. we check if the ID is a valid hex value because the ID in the database is stored as a hex value. Next, we use `primitive.ObjectIDFromHex(id)` to convert the ID from `hex` to `primitive.ObjectID` because that is how the `ID` is stored in the database. `primitive.ObjectIDFromHex(id)` returns two values `res` and `err`. 
+In the code above, we get the ID parameter from the URL path using `chi.URLParam(r, "id")`. we check if the ID is a valid hex value because the ID in the database is stored as a hex value. Next, we use `primitive.ObjectIDFromHex(id)` to convert the ID from `hex` to `primitive.ObjectID` because that is how the `ID` is stored in the database. `primitive.ObjectIDFromHex(id)` returns two values `res` and `err`.
 
 If `err` is not empty, log the error to the console, and return a JSON response with a 400 (bad request) HTTP status code and an error message.
 
-If `res` is not empty, the conversion was successful.  Next, we decode the request body and validate that the JSON data sent by the client is valid. 
+If `res` is not empty, the conversion was successful. Next, we decode the request body and validate that the JSON data sent by the client is valid.
 
 Next, we create a `updateTodoReq` variable of type `UpdateTodo` to store the user input sent through the request body.
 
@@ -665,7 +663,7 @@ If the update operation is successful, return a JSON response with a 200 (OK) HT
 
 #### Delete Todo
 
-This handler function handles all DELETE HTTP requests for  `"localhost:9000/todo/:id"`. It deletes a TODO item from the database.
+This handler function handles all DELETE HTTP requests for `"localhost:9000/todo/:id"`. It deletes a TODO item from the database.
 
 ```go
 func deleteTodo(rw http.ResponseWriter, r *http.Request) {
@@ -693,13 +691,13 @@ func deleteTodo(rw http.ResponseWriter, r *http.Request) {
 }
 ```
 
-In the code above, We extract the ID from the URL path using `chi.URLParam(r, "id")`. 
+In the code above, We extract the ID from the URL path using `chi.URLParam(r, "id")`.
 
-we check if the **ID** is a valid hex value and convert the **ID** from `hex` to `primitive.ObjectID` using `primitive.ObjectIDFromHex(id)`.  `primitive.ObjectIDFromHex(id)` returns two values `res` and `err`. 
+we check if the **ID** is a valid hex value and convert the **ID** from `hex` to `primitive.ObjectID` using `primitive.ObjectIDFromHex(id)`. `primitive.ObjectIDFromHex(id)` returns two values `res` and `err`.
 
- if `err` is not empty, the ID is invalid, we return a JSON response with a 400(Bad Request)HTTP status code and an error message indicating it’s an invalid ID. 
+if `err` is not empty, the ID is invalid, we return a JSON response with a 400(Bad Request)HTTP status code and an error message indicating it’s an invalid ID.
 
-If `res` is not empty, create a filter variable `bson.M` object to store the  ID saved in the `res` . `db.Collection(collectionName).DeleteOne(r.Context(), filter)` will find the TODO entry with that ID and delete it from the database. 
+If `res` is not empty, create a filter variable `bson.M` object to store the ID saved in the `res` . `db.Collection(collectionName).DeleteOne(r.Context(), filter)` will find the TODO entry with that ID and delete it from the database.
 
 If deleting the TODO item from the database encounters an error, we return a JSON response with a 500(Internal Server Error) and the error message indicating an error occurred while deleting the TODO item.
 
@@ -715,8 +713,8 @@ For the complete code, view it on [GitHub](https://github.com/Kellswork/golang-t
 
 In the upcoming sections, we'll cover:
 
-- Connecting a Todo Frontend to the Todo Backend: [Learn how to set up HTML Templates and Static Assets in Golang](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets)
-- Building the Todo Frontend with Fetch API and Vanilla JavaScript(TypeScript version too )
+- Connecting a Todo Frontend to the Todo Backend: Learn how to set up HTML Templates and Static Assets in Golang
+- Building the Todo Frontend with Fetch API and Vanilla JavaScript ( TypeSript Version too)
 - Writing Go tests for the Todo backend.
 - Testing API endpoints using Postman.
 
@@ -724,7 +722,7 @@ In the upcoming sections, we'll cover:
 
 In this tutorial, you've learned to set up a Go application, connect to a server, gracefully shut down the server, and create a Home API endpoint along with CRUD Todo API endpoints. With a functional backend, you can test all API endpoints using Postman. If you need to familiarize yourself with this process, watch for my upcoming article on testing API endpoints with Postman.
 
-As for the front end, I have published a guide on [how to build a CRUD Todo App with Fetch API and Vanilla JavaScript](https://www.agirlcodes.dev/todo-app-frontend-crud-vanilla-js-fetch-api). The TypeScript version will be availabl next week. Before starting that, check out my recent article on [connecting the frontend with the backend using HTML templates and static files ( CSS and JavaScript or TypeScript)](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets). It covers how to add and host static files on your Golang server. However, if you're not interested, I can provide you with a link to download the HTML, CSS, and JavaScript code so you can test the Todo backend API endpoints with the frontend UI instead of Postman.
+As for the front end, I have published a guide on [how to build a CRUD Todo App with Fetch API and Vanilla JavaScript](https://www.agirlcodes.dev/todo-app-frontend-crud-vanilla-js-fetch-api). A [TypeScript version](todo-app-frontend-crud-typescript-fetch-api) is available too. Before starting that, check out my recent article on [connecting the frontend with the backend using HTML templates and static files ( CSS and JavaScript or TypeScript)](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets). It covers how to add and host static files on your Golang server. However, if you're not interested, I can provide you with a link to download the HTML, CSS, and JavaScript code so you can test the Todo backend API endpoints with the frontend UI instead of Postman.
 
 I also plan on publishing an article detailing how to write Golang tests for the backend APIs. If you want these tutorials sent to you, subscribe to my newsletter, and you will get them once they are published.
 
@@ -734,3 +732,4 @@ I hope you found this helpful ❤️.
 
 - [Setup HTML Templates and Static Assets in Golang](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets).
 - [Build a CRUD Todo App with Vanilla JavaScript and Fetch API](https://www.agirlcodes.dev/todo-app-frontend-crud-vanilla-js-fetch-api).
+- [Build a CRUD Todo App with TypeScript and Fetch API](https://www.agirlcodes.dev/todo-app-frontend-crud-typescript-fetch-api)
