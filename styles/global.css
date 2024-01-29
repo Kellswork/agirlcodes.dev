@@ -37,17 +37,17 @@ h6 {
   line-height: 1.75;
 }
 
-.markdown-content p code {
+.markdown-content p code, li>code {
   color: #51279b;
   background: #51279b1f;
   padding: 0px 2px;
   border-radius: 4px;
   font-size: 14px;
 }
-.markdown-content p code::before {
+.markdown-content p code::before, li>code::before {
   content: "`";
 }
-.markdown-content p code::after {
+.markdown-content p code::after, li>code::after {
   content: "`";
 }
 

@@ -1,7 +1,7 @@
 ---
 title: 'Build a CRUD Todo App with TypeScript and Fetch API'
 date: 29-01-2024
-fullDate: Friday, 29 January 2024
+fullDate: Monday, 29 January 2024
 tags: TypeScript
 image: /posts-images/crud-fetch-api-frontend/todo-app-frontend-crud-vanilla-js-fetch-api.jpg
 description: "This article will focus on building the frontend portion of a Todo App using TypeScript and Fetch API. It's perfect for anyone interested in performing CRUD operations using TypeScript and Fetch API"
