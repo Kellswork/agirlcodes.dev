@@ -3,7 +3,7 @@ import BaseLayout from "../baseLayout";
 import { Button, FilterChipFilled } from "./button";
 import Link from "next/link";
 import Image from "next/image";
-import profilepic from "../../public/agirlcodes.jpg";
+import profilepic from "../../public/images/profile.jpg";
 
 interface CardProps {
   title?: string;
