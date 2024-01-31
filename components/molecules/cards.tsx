@@ -1,5 +1,4 @@
 import React from "react";
-import BaseLayout from "../baseLayout";
 import { Button, FilterChipFilled } from "./button";
 import Link from "next/link";
 import Image from "next/image";

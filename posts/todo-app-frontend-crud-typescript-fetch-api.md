@@ -442,7 +442,7 @@ As a quick recap, When we created the **todoContainer.innerHTML** to display the
 
 To add functionality to the delete button action,  we define a `deleteTaskButton` function below `displayTodos()` function. 
 
-```tsx
+```typescript
 function deleteTaskButton() {
   const deleteTodoButtons: HTMLButtonElement[] = Array.from(
     document.querySelectorAll(".delete")
@@ -465,7 +465,7 @@ TypeScript is statically typed, and it performs type checking at compile-time. W
 
 change `deletTodoButton` declaration to see the tsc error.
 
-```tsx
+```javascript
 const deleteTodoButtons = document.querySelectorAll(".delete")
 ```
 
@@ -481,7 +481,7 @@ We create a constant **todoID** that we will use to access the ID for each todo 
 
 If you check the code snippet below, you will see I updated the button element with class ’**delete**’ to show how to add the **data-id** attribute. 
 
-```tsx
+```typescript
 async function displayTodos() {
 
   <button data-id=${todo.id} class="delete">
@@ -497,7 +497,7 @@ Next, we call the **deleteTodo** function and pass in the **todoID** as a parame
 
 Finally, we call the `deleteTaskButton()` function inside `displayTodos()` so that it is available to `displayTodos` when a user clicks the delete button.
 
-```tsx
+```typescript
 async function displayTodos() {
   // code implementation ...
 
@@ -554,7 +554,7 @@ To achieve this, we need to create a variable to track whether the user is curre
 
 At the beginning of the file where you defined your variable, create `'isEditingTask'` variable and set it to `false`. Also create a `editButtonTodoID` variable; we will use it to store the ID of the todo we want to edit.
 
-```tsx
+```typescript
 let isEditingTask = false;
 let editButtonTodoID = "";
 ```
@@ -614,7 +614,7 @@ Your app should be able to load a todo title into the input box when you click o
 
 Next, let's create an `edit tasks` function to handle editing a Todo item on the UI. For now, we can only load the text into the input field. Place the code below `addTask()` function.
 
-```tsx
+```typescript
 async function addTask() {
   // code implementation
 }
@@ -659,7 +659,7 @@ To implement this functionality, the process involves two main steps:
 
 First, we want to style the todo title text to visually indicate whether an item is marked as completed or not. Update the HTML structure within the `displayTodos` function:
 
-```tsx
+```typescript
 <div class="todo">
   <span
     id="todoname"
@@ -689,7 +689,7 @@ Next, we want to allow users to click on a Todo item to toggle its completion st
 
 Also, call the `toggleTaskCompletion` inside the `dislayTodos` function as we did for `deleteTaskButton` and `editTaskTiltleButton`.
 
-```tsx
+```typescript
 async function displayTodos() {
   // rest of code implementation...
 
