@@ -444,6 +444,7 @@ To add functionality to the delete button action,  we define a `deleteTaskButton
 
 ```typescript
 function deleteTaskButton() {
+  
   const deleteTodoButtons: HTMLButtonElement[] = Array.from(
     document.querySelectorAll(".delete")
   );
