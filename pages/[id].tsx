@@ -6,7 +6,12 @@ import BaseLayout from "../components/baseLayout";
 import SyntaxHighlighter, {
   SyntaxHighlighterProps,
 } from "react-syntax-highlighter";
-import { paraisoDark, shadesOfPurple, qtcreatorDark, srcery} from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import {
+  paraisoDark,
+  shadesOfPurple,
+  qtcreatorDark,
+  srcery,
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import Markdown from "react-markdown";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -102,10 +107,12 @@ export default function Post({ postData }: Props) {
             <article className="">
               <div className="markdown-content max-w-[44rem] mx-auto ">
                 <p className="text-sm font-medium text-purple-7">
-                  Published on {postData.frontMatter.fullDate}
+                  {postData.frontMatter.updatedAtFullDate == undefined
+                    ? `Published on ${postData.frontMatter.fullDate}`
+                    : `Updated on ${postData.frontMatter.updatedAtFullDate} `}
                 </p>
                 <Markdown
-                rehypePlugins={[rehypeRaw] as any}
+                  rehypePlugins={[rehypeRaw] as any}
                   components={{
                     code(props: any) {
                       const { children, className, node, ...rest } = props;
@@ -148,10 +155,9 @@ export default function Post({ postData }: Props) {
         </BaseLayout>
       </main>
       <Analytics />
-      <SpeedInsights/>
-      <Footer/>
+      <SpeedInsights />
+      <Footer />
     </div>
-    
   );
 }
 

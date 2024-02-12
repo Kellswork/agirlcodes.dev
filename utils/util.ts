@@ -10,6 +10,8 @@ interface FrontMatter {
   date: string;
   description: string;
   fullDate: string;
+  updatedAt: string;
+  updatedAtFullDate: string;
   url: string;
   tags: string | string[];
   image: string;

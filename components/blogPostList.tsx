@@ -2,18 +2,25 @@ import React from "react";
 import { FilterChipSelected, FilterChipUnselected } from "./molecules/button";
 import { PostDataProps, getSortedPostsData } from "../utils/util";
 import { BlogPostlistCard } from "./molecules/cards";
-import { DateTime } from 'luxon'
+import { DateTime } from "luxon";
 
+const date = (updatedAt: string, date: string) =>
+updatedAt == undefined ? date : updatedAt;
 
-
-
-
-const BlogPostList = ({posts}:{posts: PostDataProps[]}) => {
+const BlogPostList = ({ posts }: { posts: PostDataProps[] }) => {
 
   const sortBlogPosts = posts.sort((a, b) => {
-    const beforeDate: any = DateTime.fromFormat(a.frontMatter.date, 'm-d-yyyy')
-    const afterDate: any = DateTime.fromFormat(b.frontMatter.date, 'm-d-yyyy')
-    return afterDate - beforeDate
+
+
+    const beforeDate: any = DateTime.fromFormat(
+      date(a.frontMatter.updatedAt, a.frontMatter.date),
+      "m-d-yyyy"
+    );
+    const afterDate: any = DateTime.fromFormat(
+      date(b.frontMatter.updatedAt, b.frontMatter.date),
+      "m-d-yyyy"
+    );
+    return afterDate - beforeDate;
   });
 
   // const formatDate = (date) => DateTime.fromFormat(date, 'd-m-yyyy').setLocale('en-GB').toLocaleString(DateTime.DATE_FULL);;
@@ -29,7 +36,16 @@ const BlogPostList = ({posts}:{posts: PostDataProps[]}) => {
       </div> */}
 
       <div className="post-list mt-4">
-        {sortBlogPosts.map((post) => <BlogPostlistCard key={post.id} title={post.frontMatter.title} description={post.frontMatter.description} date={post.frontMatter.date} url={post.id} tags={post.frontMatter.tags}/>)}
+        {sortBlogPosts.map((post) => (
+          <BlogPostlistCard
+            key={post.id}
+            title={post.frontMatter.title}
+            description={post.frontMatter.description}
+            date={date(post.frontMatter.updatedAt, post.frontMatter.date)}
+            url={post.id}
+            tags={post.frontMatter.tags}
+          />
+        ))}
       </div>
     </>
   );
