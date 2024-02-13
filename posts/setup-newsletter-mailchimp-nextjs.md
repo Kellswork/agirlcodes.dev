@@ -28,14 +28,14 @@ MailChimp is a popular online marketing tool that you can use to manage your ema
 
 **Create an account with MailChimp**.
 
-To get started, click [here to create a free MailChimp account](https://mailchimp.com/help/create-an-account/). When users subscribe to your newsletter, their email address is added to your `**Audience**` on your Mailchimp account. 
+To get started, click [here to create a free MailChimp account](https://mailchimp.com/help/create-an-account/). When users subscribe to your newsletter, their email address is added to your `Audience` on your Mailchimp account. 
 
 **Obtain API Keys and Audience ID**
 
-Mailchimp provides API keys that allow other applications, i.e. your Next.js blog, to access your `**Audience`**. To connect your blog to Mailchimp API, we will need three environmental variables from Mailchimp;
+Mailchimp provides API keys that allow other applications, i.e. your Next.js blog, to access your `Audience`. To connect your blog to Mailchimp API, we will need three environmental variables from Mailchimp;
 
-- [**Generated API Key](https://mailchimp.com/help/about-api-keys/#find+or+generate+your+api+key):** grants access to your Mailchimp account. For documentation on how to get it, click [here](https://mailchimp.com/help/about-api-keys/#find+or+generate+your+api+key).
-- [**API Server](https://mailchimp.com/developer/marketing/guides/quick-start/#make-your-first-api-call)** : This indicates the region where your Mailchimp data is stored ( e.g. `us2` )
+- [**Generated API Key**](https://mailchimp.com/help/about-api-keys/#find+or+generate+your+api+key): grants access to your Mailchimp account. For documentation on how to get it, click [here](https://mailchimp.com/help/about-api-keys/#find+or+generate+your+api+key).
+- [**API Server**](https://mailchimp.com/developer/marketing/guides/quick-start/#make-your-first-api-call) : This indicates the region where your Mailchimp data is stored ( e.g. `us2` )
 - [**Audience ID**](https://mailchimp.com/help/find-audience-id/)
 
 ### Build **Next.Js API  and Newsletter Form**
@@ -241,7 +241,7 @@ const options = {
 };
 ```
 
-The term `'subscribed` is part of the Mailchimp API and indicates that the user has been subscribed. I have provided a link to the Mailchimp marketing API, which you can use to update your data object properties with keys of your choice. Both `email_address` and `status` properties are required by the Mailchimp marketing API.
+The term `'subscribed'` is part of the Mailchimp API and indicates that the user has been subscribed. I have provided a link to the Mailchimp marketing API, which you can use to update your data object properties with keys of your choice. Both `email_address` and `status` properties are required by the Mailchimp marketing API.
 
 We also created an `options` object that specifies the content type and sets the authorization header to your `api_key`.
 
@@ -340,7 +340,7 @@ To implement this functionality, we need some state variables.
 
 `/components/newsletter.tsx`
 
-```tsx
+```typescript
 import { useState } from "react";
 
 const Newsletter = () => {
@@ -386,7 +386,7 @@ Now that we have the state variables we need, let's add a `handleSubscribe` func
 
 `/components/newsletter.tsx`
 
-```tsx
+```javascript
 import { FormEvent, useState } from "react";
 import axios from "axios";
 
@@ -409,6 +409,7 @@ const Newsletter = () => {
       setEmail("");
       setResponseMsg(response.data.message);
     } catch (err) {
+      
       if (axios.isAxiosError(err)) {
         setStatus("error");
         setStatusCode(err.response?.status);
@@ -453,7 +454,8 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter
+export default Newsletter;
+
 ```
 
 In the code above, we define an asynchronous function called `handleSubscribe`. This function is called when a user clicks the `subscribe` button, or presses `enter` to submit the form.
