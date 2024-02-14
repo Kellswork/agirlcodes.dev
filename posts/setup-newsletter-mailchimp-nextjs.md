@@ -380,9 +380,9 @@ In the code above, we use the `useState` hook to set and manage a few states tha
 3. **`responseMsg`**: stores the response message received from the server.
 4. **statusCode**: We use this to determine which styles to apply based on the server's status code. You will see how I use this shortly.
 
-### **Form Handling, State Management & Display Server Responses.**
+### Form Handling, State Management & Display Server Responses.
 
-Now that we have the state variables we need, let's add a `handleSubscribe` function that will be responsible for making the Axios POST request to the API endpoint we created in `subscribe.ts`.
+Now that we have the state variables we need let's add a `handleSubscribe` function that will be responsible for making the Axios POST request to the API endpoint we created in `subscribe.ts`.
 
 `/components/newsletter.tsx`
 
@@ -458,7 +458,7 @@ export default Newsletter;
 
 ```
 
-In the code above, we define an asynchronous function called `handleSubscribe`. This function is called when a user clicks the `subscribe` button, or presses `enter` to submit the form.
+The code above defines an asynchronous function called `handleSubscribe`. This function is called when a user clicks the `subscribe` button, or presses `enter` to submit the form.
 
 The `handleSubscribe` function takes an event (`e`) parameter of type `FormEvent<HTMLFormElement>`. 
 
@@ -470,7 +470,7 @@ While the subscription request is being processed, we set the status to `loading
 
 If the POST request is successful, we:
 
-- Set the status to "**success"**.
+- Set the status to **"success"**.
 - Set the `statusCode` to the HTTP status code returned by the server
 - Clear the email input field
 - Set the `responseMsg` based on the message returned from the server.
@@ -502,7 +502,7 @@ Finally, if the `status` is set to `"loading"`, we disable both the input field 
 
 ```
 
-**Conditional Rendering for Success and Error Messages**
+#### Conditional Rendering for Success and Error Messages
 
 Lastly, we add a div section to display the server response messages stored in the `responseMsg` variable. We render them conditionally and style the input field border based on the value of the `status` variable.
 
@@ -522,7 +522,7 @@ If `status === 'success'`, we set the response message from the server and style
 
 If `status === 'error'`, we render the response message, style the text colour to orange, and style the input text field border to orange to indicate an error, as shown in the code below, but only if the `status code` is **400 (Bad request).**
 
-```typescript
+```javascript
 <input
   className={`grow mr-1 transition ease-out delay-75 focus-within:border-2 focus-within:border-purple-600 items-center h-14 pr-0.5 rounded caret-purple-700 outline-none px-4 disabled:border-slate-400 border ${
     statusCode == 400 ? "border-orange-500" : "border-purple-600"
@@ -553,8 +553,14 @@ You can explore this option later on if you'd like. Good luck! 🌷
 > View the complete code on [GitHub](https://github.com/Kellswork/newsletter-mailchimp)
 
 ### Conclusion
-
-To view the complete code, check it on [GitHub](https://github.com/Kellswork/agirl.codes/blob/main/pages/api/subscribe.js).
+Check out the source code on GitHub to view the complete code.
 
 I hope this article was helpful. If you have any questions or comments, add it on Medium.
 
+*Recommended Reads*
+
+- [How to sort next js blog posts by most recent post date.](https://www.agirlcodes.dev/sort-nextjs-blog-posts-by-date)
+
+- [The Complete Guide to Building React Forms with useState Hook.](https://www.agirlcodes.dev/complete-guide-build-react-forms-with-usestate-hook)
+
+- [For a quick overview of how to build forms with React Hook, check this article].(https://www.agirlcodes.dev/how-to-build-forms-with-multiple-input-fields-using-react-hooks)
