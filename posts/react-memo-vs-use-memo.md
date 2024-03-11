@@ -200,7 +200,7 @@ For a detailed example of how useMemo works, [see the difference between skippin
 
 `memo` is often used together with useMemo to optimize React applications. They are frequently used together with `useCallback` as well.
 
-**Preventing Re-render when Props are an Array or Object**
+**Preventing Re-render when Props are Arrays or Objects**
 
 For example, in the code below, we see a `person` prop sent from the parent `Info` component to the child `Profile` component. Any time the parent component re-renders, the child component will re-render, even if its props didn't change and the component is wrapped with `memo`.
 
