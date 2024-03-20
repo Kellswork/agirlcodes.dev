@@ -1,3 +1,3 @@
-Blog Website: [agirlcodes.dev](https://agirlcodes.dev).
+Blog Website: [agirlcodes.dev](https://www.agirlcodes.dev/).
 
 Built with NextJs, TypeScript, TailwindCSS
