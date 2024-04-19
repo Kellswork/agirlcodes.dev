@@ -124,6 +124,7 @@ export const ProfileCardMobile = () => (
         bgColor="bg-purple-1"
         textColor="text-text-color"
         activeColor="bg-purple-2"
+        url="https://www.linkedin.com/in/kelechi-ogbonna/"
       />
     </div>
   </div>
