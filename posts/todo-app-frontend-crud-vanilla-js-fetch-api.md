@@ -676,7 +676,7 @@ Stay tuned for an upcoming TypeScript version of this tutorial.
 This guide covers key frontend development skills, including API interaction, CRUD operations, and dynamic user interface creation. Building a Todo app is an ideal starting point for web development, offering insights and skills for broader applications. 
 
 Please feel free to email me or drop a comment if you have any questions, feedback, or need help with any part of the tutorial.
-I hope you found this article helpful ❤️
+I hope you found this article helpful.
 
 *Recommended Reads*
 - [Build a Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).

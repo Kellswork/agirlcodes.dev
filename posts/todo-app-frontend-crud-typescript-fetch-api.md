@@ -813,7 +813,7 @@ This guide covers key Frontend development skills, including API interaction, CR
 
 Please feel free to email me or drop a comment if you have any questions, feedback, or need help with any part of the tutorial.
 
-I hope you found this article helpful ❤️
+I hope you found this article helpful.
 
 *Recommended Reads*
 - [Build a Todo App backend with Golang](https://www.agirlcodes.dev/build-todo-app-backend-golang-tutorial).
