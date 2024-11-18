@@ -13,7 +13,7 @@ In this tutorial, you will learn how to build a **Todo app backend with Golang**
 
 If you are new to programming or a Dev who desires to learn Golang, this is a way you can slowly introduce yourself to the language and understand the basics and how building APIs work in Go.
 
-It is beginner-friendly, and I explain the function of each line of code so you can understand what the code does. You will learn how to build CRUD REST API endpoints, connect to a MongoDB database with Docker, create a server and shut down the server gracefully, test the APIs on Postman and consume the APIs in the Frontend using Go html/templates(HTML, CSS and JavaScript).
+It is beginner-friendly, and I explain the function of each line of code so you can understand what the code does. You will learn how to build CRUD REST API endpoints, connect to a MongoDB database with Docker, create a server and shut down the server gracefully, and consume the APIs in the Frontend using Go html/templates(HTML, CSS and JavaScript).
 
 ## Prerequisite
 
@@ -28,7 +28,6 @@ To follow along,
 
 - REST API endpoints: Create, Get, Update, and Delete API endpoints for the To-do App.
 - Use Mongo DB for the database connection and storage.
-- Postman to test the endpoints
 
 ## Build Todo APIs in these Steps;
 
@@ -715,18 +714,14 @@ In the upcoming sections, we'll cover:
 
 - Connecting a Todo Frontend to the Todo Backend: Learn how to set up HTML Templates and Static Assets in Golang
 - Building the Todo Frontend with Fetch API and Vanilla JavaScript ( TypeSript Version too)
-- Writing Go tests for the Todo backend.
-- Testing API endpoints using Postman.
 
 ### Conclusion
 
-In this tutorial, you've learned to set up a Go application, connect to a server, gracefully shut down the server, and create a Home API endpoint along with CRUD Todo API endpoints. With a functional backend, you can test all API endpoints using Postman. If you need to familiarize yourself with this process, watch for my upcoming article on testing API endpoints with Postman.
+In this tutorial, you've learned to set up a Go application, connect to a server, gracefully shut down the server, and create a Home API endpoint along with CRUD Todo API endpoints. With a functional backend, you can test all API endpoints using Postman.
 
 As for the front end, I have published a guide on [how to build a CRUD Todo App with Fetch API and Vanilla JavaScript](https://www.agirlcodes.dev/todo-app-frontend-crud-vanilla-js-fetch-api). A [TypeScript version](todo-app-frontend-crud-typescript-fetch-api) is available too. Before starting that, check out my recent article on [connecting the frontend with the backend using HTML templates and static files ( CSS and JavaScript or TypeScript)](https://www.agirlcodes.dev/golang-setup-html-templates-and-static-assets). It covers how to add and host static files on your Golang server. However, if you're not interested, I can provide you with a link to download the HTML, CSS, and JavaScript code so you can test the Todo backend API endpoints with the frontend UI instead of Postman.
 
 I also plan on publishing an article detailing how to write Golang tests for the backend APIs. If you want these tutorials sent to you, subscribe to my newsletter, and you will get them once they are published.
-
-I hope you found this helpful ❤️.
 
 *Recommended Reads*
 
