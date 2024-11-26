@@ -4,7 +4,7 @@ import { PostDataProps, getSortedPostsData } from "../utils/util";
 import { BlogPostlistCard } from "./molecules/cards";
 import { DateTime } from "luxon";
 
-const date = (updatedAt: string, date: string) =>
+const date = (updatedAt: string|undefined, date: string) =>
 updatedAt == undefined ? date : updatedAt;
 
 const BlogPostList = ({ posts }: { posts: PostDataProps[] }) => {
