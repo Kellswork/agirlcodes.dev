@@ -17,20 +17,25 @@ The code snippet below shows the project structure I was working with.
 
 ```jsx
 // useCustomHook.jsx
-function useCustomHook() {
-  const [data, setData] = useState(stateData);
-  const [location, setLocation] = useState("state");
 
-  const handleLocationChange = (selectedLocation) => {
-    if (selectedLocation === "state") {
-      setLocation("state");
-      setData(stateData);
-    } else if (selectedLocation === "country") {
-      setLocation("country");
-      setData(countryData);
-    }
-  };
-  return { data, location, handleLocationChange };
+function useCustomHook() {
+    const [data, setData] = useState(stateData);
+    const [location, setLocation] = useState("state");
+
+    const handleLocationChange = (selectedLocation) => {
+        if (selectedLocation === "state") {
+            setLocation("state");
+            setData(stateData);
+        } else if (selectedLocation === "country") {
+            setLocation("country");
+            setData(countryData);
+        }
+    };
+    return {
+        data,
+        location,
+        handleLocationChange
+    };
 }
 
 export default useCustomHook;
@@ -91,7 +96,7 @@ In `App.jsx`, which serves as the parent component, the custom hook is called to
 
 In `LocationFilter` component, I initially instantiated the custom hook directly to access the `location` and `handleLocationChange` state, which was intended to manage the data displayed in the table according to a “state” or “location” filter.”
 
-However, when I click the `view state data` or “view country data” button, there is no change on the UI.
+However, when I click the `view state data` or `view country data` button, there is no change in the UI.
 
 I checked the location state inside the `LocationFilter` component using the React Developer Tools, and I saw that the `location` and `data` states were updating as expected with the correct value. However, the UI did not reflect the changes to the data state when I clicked the button.
 
@@ -170,6 +175,8 @@ export default App;
 
 ### Conclusion
 
-This experience has reinforced my understanding of custom hooks, the importance of lifting state to a common parent component and best practices for state management in React, to ensure  synchronised, consistent UI updates. While custom hooks allow you to share state logic across components, they do not let you share state.
+This experience has deepened my understanding of custom hooks and highlighted the importance of strategic state placement in React. While custom hooks allow you to share logic across components, they do not let you share state.
+
+When managing state, prioritize keeping it in the component that primarily owns and uses it. If other components depend on updates from that state, consider lifting only the necessary data to a shared parent to ensure synchronized and consistent UI updates, without causing unnecessary re-renders.
 
 For more detailed information, refer to the [React documentation on Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks) and [Lifting State Up](https://react.dev/learn/sharing-state-between-components#step-2-pass-hardcoded-data-from-the-common-parent).
